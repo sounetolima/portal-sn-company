@@ -614,9 +614,9 @@
       </article>
     </section>
 
-    <section aria-label="Retiradas e investimentos">
-      <div class="section-heading"><h2>CEO &amp; expansão</h2><span class="muted">Separado da operação de propósito — responde outra pergunta</span></div>
-      <div class="kpi-grid secondary">
+    <section aria-label="Retiradas, investimentos e aportes">
+      <div class="section-heading"><h2>CEO, expansão &amp; aportes</h2><span class="muted">Separado da operação de propósito — responde outra pergunta</span></div>
+      <div class="kpi-grid">
         <article class="kpi-card">
           <header><h3>Retiradas CEO</h3>
             <details class="info"><summary aria-label="O que são Retiradas CEO?">i</summary>
@@ -636,15 +636,56 @@
           <p class="kpi-caption" id="kpiInvestimentoCaption">Dinheiro direcionado à expansão da marca.</p>
         </article>
         <article class="kpi-card">
+          <header><h3>Aportes de sócios</h3>
+            <details class="info"><summary aria-label="O que são Aportes de sócios?">i</summary>
+              <p>Apoio financeiro que os sócios injetam no negócio — dinheiro de fora da operação. Não é venda nem lucro, por isso não entra no Faturamento; mas entra no caixa, por isso soma no Impacto Líquido no Caixa.</p>
+            </details>
+          </header>
+          <p class="kpi-value num" id="kpiAportes">—</p>
+          <p class="kpi-caption" id="kpiAportesCaption">Dinheiro que os sócios injetaram no caixa neste período.</p>
+        </article>
+        <article class="kpi-card">
           <header><h3>Impacto líquido no caixa</h3>
             <details class="info"><summary aria-label="O que é Impacto líquido no caixa?">i</summary>
-              <p>Lucro operacional menos suas retiradas e os investimentos em expansão. Se está negativo mesmo com lucro operacional positivo, o caixa caiu por retiradas/investimento — não porque o negócio foi mal.</p>
+              <p>Lucro operacional menos suas retiradas e os investimentos em expansão, mais os aportes que os sócios injetaram no caixa. Se está negativo mesmo com lucro operacional positivo, o caixa caiu por retiradas/investimento maiores que o aporte recebido — não porque o negócio foi mal.</p>
             </details>
           </header>
           <p class="kpi-value num" id="kpiImpacto">—</p>
-          <p class="kpi-caption" id="kpiImpactoCaption">O que de fato aconteceu com o caixa.</p>
+          <p class="kpi-caption" id="kpiImpactoCaption">Resultado, menos retiradas e investimento, mais aportes dos sócios.</p>
         </article>
       </div>
+    </section>
+
+    <section aria-label="Aportes de sócios — histórico completo" id="aportesSection">
+      <div class="section-heading"><h2>Aportes de sócios — histórico completo</h2><span class="muted">Todos os lançamentos de apoio financeiro dos sócios, de nov/2023 a set/2026</span></div>
+      <div class="kpi-grid secondary">
+        <article class="kpi-card">
+          <header><h3>Total geral</h3></header>
+          <p class="kpi-value num" id="apoTotalGeral" style="color:var(--good);">—</p>
+          <p class="kpi-caption" id="apoTotalGeralCaption">Soma de todos os aportes registrados.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Aportado em 2026</h3></header>
+          <p class="kpi-value num" id="apoTotal2026" style="color:var(--good);">—</p>
+          <p class="kpi-caption">Já soma no Impacto Líquido no Caixa de cada mês, na seção acima.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Aportado em 2024 &amp; 2025</h3></header>
+          <p class="kpi-value num" id="apoTotalHist">—</p>
+          <p class="kpi-caption">Histórico — ainda sem receita/despesa mensal estruturada nesses anos para calcular o impacto no caixa.</p>
+        </article>
+      </div>
+      <div class="compare-grid" style="margin-top:14px;">
+        <article class="compare-card">
+          <div class="compare-head"><div><strong>Por ano</strong><span>2023 a 2026</span></div></div>
+          <div class="compare-rows" id="apoPorAno"></div>
+        </article>
+        <article class="compare-card">
+          <div class="compare-head"><div><strong>Por mês</strong><span>Do mais recente ao mais antigo</span></div></div>
+          <div class="compare-rows" id="apoPorMes" style="max-height:260px;overflow-y:auto;padding-right:8px;"></div>
+        </article>
+      </div>
+      <p class="kpi-caption" style="margin-top:12px;">Origem dos aportes: AJU PRAIA e Gilberto Vieira Advocacia, com destino à conta da The Hair Bar - Franquias de Beleza LTDA.</p>
     </section>
 
     <section aria-label="Auditoria financeira" id="auditSection">
@@ -727,7 +768,7 @@
         <article class="compare-card">
           <div class="compare-head"><span class="dot dot-sndecor"></span><div><strong>SN Table Decor</strong><span>Loja Edifício Premier · Aracaju/SE</span></div></div>
           <div class="compare-rows" id="compareSndecor"></div>
-          <p class="compare-note">Loja em fase de abertura desde março — poucos meses de vendas plenas. Ainda não há categorias de Retiradas CEO ou Investimento em Franquias identificadas nesta empresa.</p>
+          <p class="compare-note">Loja em fase de abertura desde março — poucos meses de vendas plenas. Ainda não há categorias de Retiradas CEO, Investimento em Franquias ou Aportes de sócios identificadas nesta empresa.</p>
         </article>
       </div>
     </section>
@@ -737,7 +778,7 @@
       <div class="explainer-grid">
         <details class="explainer">
           <summary>Lucro não é a mesma coisa que dinheiro no bolso<i data-lucide="chevron-down" class="chev" style="width:14px;height:14px;"></i></summary>
-          <p>De janeiro a julho de 2026, a The Hair Bar teve <strong class="num">R$ 40.372,06</strong> de lucro operacional — mas o Impacto Líquido no Caixa foi <strong class="num">-R$ 67.948,53</strong>. A diferença não é prejuízo na operação: são <strong class="num">R$ 67.920,59</strong> em retiradas suas e <strong class="num">R$ 40.400,00</strong> investidos em expansão. O negócio se sustentou; o caixa caiu porque saiu mais do que ele gerou.</p>
+          <p>De janeiro a julho de 2026, a The Hair Bar teve <strong class="num">R$ 40.372,06</strong> de lucro operacional. Saíram <strong class="num">R$ 67.920,59</strong> em retiradas suas e <strong class="num">R$ 40.400,00</strong> investidos em expansão — mas entraram <strong class="num">R$ 89.143,57</strong> em aportes dos sócios, e o Impacto Líquido no Caixa fechou positivo em <strong class="num">R$ 21.195,04</strong>. O negócio se sustentou, e o caixa cresceu porque os aportes cobriram as retiradas e o investimento.</p>
         </details>
         <details class="explainer">
           <summary>Por que separamos suas retiradas da despesa do salão<i data-lucide="chevron-down" class="chev" style="width:14px;height:14px;"></i></summary>
@@ -757,7 +798,7 @@
   </main>
 
   <footer>
-    <p id="footerNote">Receita da The Hair Bar até 07/09/2026 e despesas até 08/09/2026 (Relatório de Movimentações Financeiras e Despesas/Contas a Pagar). SN Table Decor: fluxo de caixa e planilha de despesas mensais. Agosto e setembro da The Hair Bar aparecem marcados com asterisco: a despesa desses meses está em auditoria e ainda representa o desembolso total, sem separar as Retiradas CEO e o Investimento em Franquias. A conciliação entre a conta Stone e o Trinks está 85% concluída — a diferença remanescente de R$ 417,03 está integralmente explicada na seção de auditoria.</p>
+    <p id="footerNote">Receita da The Hair Bar até 07/09/2026 e despesas até 08/09/2026 (Relatório de Movimentações Financeiras e Despesas/Contas a Pagar). SN Table Decor: fluxo de caixa e planilha de despesas mensais. Agosto e setembro da The Hair Bar aparecem marcados com asterisco: a despesa desses meses está em auditoria e ainda representa o desembolso total, sem separar as Retiradas CEO e o Investimento em Franquias. A conciliação entre a conta Stone e o Trinks está 85% concluída — a diferença remanescente de R$ 417,03 está integralmente explicada na seção de auditoria. Aportes de sócios (extrato de transferências para a THB, nov/2023–set/2026) somam no Impacto Líquido no Caixa dos meses de 2026; agosto e setembro não têm aporte classificado ainda pela mesma auditoria pendente da despesa.</p>
   </footer>
 
 </div>
@@ -773,28 +814,68 @@
     key:"thb", name:"The Hair Bar", sub:"Jardins · Aracaju/SE", color:"var(--thb)",
     hasCeoFields:true,
     months:[
-      {m:1, label:"Jan", receita:97586.75, despesa:71436.27, resultado:26150.48, retiradasCEO:11563.80, investFranquias:3500.00, impacto:11086.68,
+      {m:1, label:"Jan", receita:97586.75, despesa:71436.27, resultado:26150.48, retiradasCEO:11563.80, investFranquias:3500.00, aportes:3000.00, impacto:14086.68,
        clientes:656, atendimentos:938, servicos:100452.00, produtos:498.00, pacotes:7792.10, descontos:-3278.00},
-      {m:2, label:"Fev", receita:87806.10, despesa:97981.96, resultado:-10175.86, retiradasCEO:6517.36, investFranquias:2500.00, impacto:-19193.22,
+      {m:2, label:"Fev", receita:87806.10, despesa:97981.96, resultado:-10175.86, retiradasCEO:6517.36, investFranquias:2500.00, aportes:4000.00, impacto:-15193.22,
        clientes:593, atendimentos:879, servicos:91400.00, produtos:351.00, pacotes:8446.00, descontos:-2827.00},
-      {m:3, label:"Mar", receita:99130.37, despesa:92187.55, resultado:6942.82, retiradasCEO:7456.42, investFranquias:4500.00, impacto:-5013.60,
+      {m:3, label:"Mar", receita:99130.37, despesa:92187.55, resultado:6942.82, retiradasCEO:7456.42, investFranquias:4500.00, aportes:16777.45, impacto:11763.85,
        clientes:676, atendimentos:1036, servicos:105370.00, produtos:208.00, pacotes:4613.75, descontos:-4098.30},
-      {m:4, label:"Abr", receita:104782.47, despesa:96122.89, resultado:8659.58, retiradasCEO:6942.39, investFranquias:9600.00, impacto:-7882.81,
+      {m:4, label:"Abr", receita:104782.47, despesa:96122.89, resultado:8659.58, retiradasCEO:6942.39, investFranquias:9600.00, aportes:6471.03, impacto:-1411.78,
        clientes:659, atendimentos:1016, servicos:104431.00, produtos:758.00, pacotes:10432.00, descontos:-4166.25},
-      {m:5, label:"Mai", receita:118177.75, despesa:109286.78, resultado:8890.97, retiradasCEO:8912.51, investFranquias:6950.00, impacto:-6971.54,
+      {m:5, label:"Mai", receita:118177.75, despesa:109286.78, resultado:8890.97, retiradasCEO:8912.51, investFranquias:6950.00, aportes:17724.97, impacto:10753.43,
        clientes:699, atendimentos:1126, servicos:133919.00, produtos:472.00, pacotes:4233.90, descontos:-9956.45},
-      {m:6, label:"Jun", receita:119597.11, despesa:121869.83, resultado:-2272.72, retiradasCEO:17498.69, investFranquias:4500.00, impacto:-24271.41,
+      {m:6, label:"Jun", receita:119597.11, despesa:121869.83, resultado:-2272.72, retiradasCEO:17498.69, investFranquias:4500.00, aportes:17728.87, impacto:-6542.54,
        clientes:666, atendimentos:1168, servicos:138413.00, produtos:921.00, pacotes:2925.00, descontos:-9649.80},
-      {m:7, label:"Jul", receita:105295.30, despesa:103118.51, resultado:2176.79, retiradasCEO:9029.42, investFranquias:8850.00, impacto:-15702.63,
+      {m:7, label:"Jul", receita:105295.30, despesa:103118.51, resultado:2176.79, retiradasCEO:9029.42, investFranquias:8850.00, aportes:23441.25, impacto:7738.62,
        clientes:624, atendimentos:1042, servicos:112601.00, produtos:575.00, pacotes:1600.00, descontos:-8698.55},
-      {m:8, label:"Ago*", receita:97511.00, despesa:103401.42, resultado:-5890.42, retiradasCEO:null, investFranquias:null, impacto:null,
+      {m:8, label:"Ago*", receita:97511.00, despesa:103401.42, resultado:-5890.42, retiradasCEO:null, investFranquias:null, aportes:0.00, impacto:null,
        emAuditoria:true, despesaBruta:true,
        clientes:601, atendimentos:1010, servicos:105473.00, produtos:184.00, pacotes:1280.00, descontos:-8509.60},
-      {m:9, label:"Set*", receita:20875.95, despesa:27984.37, resultado:-7108.42, retiradasCEO:null, investFranquias:null, impacto:null,
+      {m:9, label:"Set*", receita:20875.95, despesa:27984.37, resultado:-7108.42, retiradasCEO:null, investFranquias:null, aportes:3000.00, impacto:null,
        emAuditoria:true, despesaBruta:true, parcial:true,
        clientes:211, atendimentos:230, servicos:23068.00, produtos:135.00, pacotes:0.00, descontos:-2083.90}
     ]
   };
+
+  // ---- Aportes de sócios (apoio financeiro dos sócios injetado no negócio) ----
+  // Fonte: extrato de transferências para "THE HAIR BAR - FRANQUIAS DE BELEZA LTDA", origem AJU PRAIA / Gilberto Vieira Advocacia.
+  // Não é receita da operação, não entra no Faturamento nem no Lucro Operacional -> soma direto no Impacto Líquido no Caixa (2026, acima).
+  // 2023-2025 é histórico (a THB só tem receita/despesa mensal estruturada a partir de 2026), guardado aqui para a seção "Aportes de sócios".
+  var APORTES_MESES = [
+    {ano:2023, mes:11, label:"Nov/2023", valor:21365.59},
+    {ano:2023, mes:12, label:"Dez/2023", valor:9641.48},
+    {ano:2024, mes:1, label:"Jan/2024", valor:40267.79},
+    {ano:2024, mes:2, label:"Fev/2024", valor:67217.19},
+    {ano:2024, mes:3, label:"Mar/2024", valor:49717.79},
+    {ano:2024, mes:4, label:"Abr/2024", valor:43217.79},
+    {ano:2024, mes:5, label:"Mai/2024", valor:23100.00},
+    {ano:2024, mes:6, label:"Jun/2024", valor:44155.00},
+    {ano:2024, mes:7, label:"Jul/2024", valor:29700.00},
+    {ano:2024, mes:8, label:"Ago/2024", valor:45446.46},
+    {ano:2024, mes:9, label:"Set/2024", valor:26788.62},
+    {ano:2024, mes:10, label:"Out/2024", valor:23100.00},
+    {ano:2024, mes:11, label:"Nov/2024", valor:14500.00},
+    {ano:2024, mes:12, label:"Dez/2024", valor:9500.00},
+    {ano:2025, mes:1, label:"Jan/2025", valor:7497.00},
+    {ano:2025, mes:2, label:"Fev/2025", valor:22962.73},
+    {ano:2025, mes:3, label:"Mar/2025", valor:17624.91},
+    {ano:2025, mes:4, label:"Abr/2025", valor:13000.00},
+    {ano:2025, mes:6, label:"Jun/2025", valor:13300.00},
+    {ano:2025, mes:7, label:"Jul/2025", valor:10000.00},
+    {ano:2025, mes:8, label:"Ago/2025", valor:14769.57},
+    {ano:2025, mes:9, label:"Set/2025", valor:25000.00},
+    {ano:2025, mes:10, label:"Out/2025", valor:2000.00},
+    {ano:2025, mes:11, label:"Nov/2025", valor:7200.00},
+    {ano:2025, mes:12, label:"Dez/2025", valor:8733.84},
+    {ano:2026, mes:1, label:"Jan/2026", valor:3000.00},
+    {ano:2026, mes:2, label:"Fev/2026", valor:4000.00},
+    {ano:2026, mes:3, label:"Mar/2026", valor:16777.45},
+    {ano:2026, mes:4, label:"Abr/2026", valor:6471.03},
+    {ano:2026, mes:5, label:"Mai/2026", valor:17724.97},
+    {ano:2026, mes:6, label:"Jun/2026", valor:17728.87},
+    {ano:2026, mes:7, label:"Jul/2026", valor:23441.25},
+    {ano:2026, mes:9, label:"Set/2026", valor:3000.00}
+  ];
 
   var SNDECOR = {
     key:"sndecor", name:"SN Table Decor", sub:"Loja Edifício Premier · Aracaju/SE", color:"var(--sndecor)",
@@ -886,9 +967,10 @@
     var resultado = receita - despesa;
     var retiradasCEO = (t && !t.noData) ? t.retiradasCEO : null;
     var investFranquias = (t && !t.noData) ? t.investFranquias : null;
-    var impacto = (retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias) : null;
+    var aportes = (t && !t.noData && t.aportes !== undefined) ? t.aportes : null;
+    var impacto = (retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias + (aportes||0)) : null;
     return {m:num, receita:receita, despesa:despesa, resultado:resultado,
-            retiradasCEO:retiradasCEO, investFranquias:investFranquias, impacto:impacto, emAuditoria:aud};
+            retiradasCEO:retiradasCEO, investFranquias:investFranquias, aportes:aportes, impacto:impacto, emAuditoria:aud};
   }
 
   function getScopeMonth(companyKey, num){
@@ -898,7 +980,7 @@
   }
 
   function sumMonths(companyKey, fromM, toM){
-    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, hasCeo=false, aud=false;
+    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, aportes=0, hasCeo=false, hasAportes=false, aud=false;
     for (var n=fromM; n<=toM; n++){
       var rec = getScopeMonth(companyKey, n);
       if (!rec || rec.noData) continue;
@@ -907,11 +989,12 @@
       if (rec.emAuditoria){ aud = true; }
       if (rec.retiradasCEO !== null && rec.retiradasCEO !== undefined){ retiradasCEO += rec.retiradasCEO; hasCeo = true; }
       if (rec.investFranquias !== null && rec.investFranquias !== undefined){ investFranquias += rec.investFranquias; }
+      if (rec.aportes !== null && rec.aportes !== undefined){ aportes += rec.aportes; hasAportes = true; }
     }
     var resultado = receita - despesa;
-    var impacto = hasCeo ? (resultado - retiradasCEO - investFranquias) : null;
+    var impacto = hasCeo ? (resultado - retiradasCEO - investFranquias + (hasAportes?aportes:0)) : null;
     return {receita:receita, despesa:despesa, resultado:resultado,
-            retiradasCEO: hasCeo?retiradasCEO:null, investFranquias: hasCeo?investFranquias:null,
+            retiradasCEO: hasCeo?retiradasCEO:null, investFranquias: hasCeo?investFranquias:null, aportes: hasAportes?aportes:null,
             impacto:impacto, emAuditoria:aud};
   }
 
@@ -949,6 +1032,7 @@
       periodData = { receita:m.receita, despesa:m.despesa, resultado:m.resultado,
         retiradasCEO: (m.retiradasCEO!==undefined? m.retiradasCEO : null),
         investFranquias: (m.investFranquias!==undefined? m.investFranquias : null),
+        aportes: (m.aportes!==undefined? m.aportes : null),
         impacto: (m.impacto!==undefined? m.impacto : null),
         emAuditoria: !!m.emAuditoria };
       periodLabel = MONTH_NAME[CURRENT_MONTH] + "/2026 (mês em andamento)";
@@ -959,6 +1043,7 @@
       periodData = { receita:m2.receita, despesa:m2.despesa, resultado:m2.resultado,
         retiradasCEO: (m2.retiradasCEO!==undefined? m2.retiradasCEO : null),
         investFranquias: (m2.investFranquias!==undefined? m2.investFranquias : null),
+        aportes: (m2.aportes!==undefined? m2.aportes : null),
         impacto: (m2.impacto!==undefined? m2.impacto : null),
         emAuditoria: !!m2.emAuditoria };
       periodLabel = MONTH_NAME[lastM] + "/2026 (mês fechado)";
@@ -1027,24 +1112,32 @@
 
     // Secondary
     var hasCeo = periodData.retiradasCEO !== null && periodData.retiradasCEO !== undefined;
-    var kR = document.getElementById("kpiRetiradas"), kI = document.getElementById("kpiInvestimento"), kIm = document.getElementById("kpiImpacto");
-    var capR = document.getElementById("kpiRetiradasCaption"), capI = document.getElementById("kpiInvestimentoCaption"), capIm = document.getElementById("kpiImpactoCaption");
+    var hasAportes = periodData.aportes !== null && periodData.aportes !== undefined;
+    var kR = document.getElementById("kpiRetiradas"), kI = document.getElementById("kpiInvestimento"), kA = document.getElementById("kpiAportes"), kIm = document.getElementById("kpiImpacto");
+    var capR = document.getElementById("kpiRetiradasCaption"), capI = document.getElementById("kpiInvestimentoCaption"), capA = document.getElementById("kpiAportesCaption"), capIm = document.getElementById("kpiImpactoCaption");
+    var suffix = scope === "all" ? " (dados da The Hair Bar — única com essa categoria até agora)" : "";
     if (hasCeo){
       kR.textContent = fmtBRL(periodData.retiradasCEO); kR.classList.remove("dim");
       kI.textContent = fmtBRL(periodData.investFranquias); kI.classList.remove("dim");
       var impactoNeg = periodData.impacto < 0;
       kIm.textContent = fmtBRL(periodData.impacto);
       kIm.style.color = impactoNeg ? "var(--critical)" : "var(--good)";
-      var suffix = scope === "all" ? " (dados da The Hair Bar — única com essa categoria até agora)" : "";
       capR.textContent = "O que você retirou para uso pessoal." + suffix;
       capI.textContent = "Dinheiro direcionado à expansão da marca." + suffix;
-      capIm.textContent = "O que de fato aconteceu com o caixa." + suffix;
+      capIm.textContent = "Resultado, menos retiradas e investimento, mais aportes dos sócios." + suffix;
     } else {
       kR.textContent = "Não disponível"; kR.classList.add("dim");
       kI.textContent = "Não disponível"; kI.classList.add("dim");
       kIm.textContent = "Não disponível"; kIm.classList.add("dim"); kIm.style.color = "";
-      var note = scope === "sndecor" ? "Ainda não há essa categoria identificada na SN Table Decor." : "Disponível apenas para a The Hair Bar até agora.";
+      var note = scope === "sndecor" ? "Ainda não há essa categoria identificada na SN Table Decor." : "Impacto no caixa indisponível — despesa deste mês ainda em auditoria.";
       capR.textContent = note; capI.textContent = note; capIm.textContent = note;
+    }
+    if (hasAportes){
+      kA.textContent = fmtBRL(periodData.aportes); kA.classList.remove("dim"); kA.style.color = periodData.aportes > 0 ? "var(--good)" : "";
+      capA.textContent = "Dinheiro que os sócios injetaram no caixa neste período." + suffix;
+    } else {
+      kA.textContent = "Não disponível"; kA.classList.add("dim"); kA.style.color = "";
+      capA.textContent = scope === "sndecor" ? "Ainda não há essa categoria identificada na SN Table Decor." : "Disponível apenas para a The Hair Bar até agora.";
     }
 
     renderCharts(scope);
@@ -1052,6 +1145,7 @@
     renderOps(opsFrom, opsTo, scope);
     renderAuditoria(scope);
     renderAPagar(scope);
+    renderAportes(scope);
 
     document.querySelectorAll(".chip").forEach(function(c){
       var active = c.dataset.company === scope;
@@ -1135,6 +1229,36 @@
       "Lançados sem valor na planilha, ainda a confirmar: " + SND_ABERTO.semValor.join(" e ") + ".";
   }
 
+  function renderAportes(scope){
+    var sec = document.getElementById("aportesSection");
+    if (scope === "sndecor"){ sec.hidden = true; return; }
+    sec.hidden = false;
+
+    var totalGeral = 0, total2026 = 0, totalHist = 0;
+    var porAno = {};
+    APORTES_MESES.forEach(function(r){
+      totalGeral += r.valor;
+      if (r.ano === 2026) total2026 += r.valor; else totalHist += r.valor;
+      porAno[r.ano] = (porAno[r.ano]||0) + r.valor;
+    });
+
+    document.getElementById("apoTotalGeral").textContent = fmtBRL(totalGeral);
+    document.getElementById("apoTotalGeralCaption").textContent = APORTES_MESES.length + " lançamentos registrados, de nov/2023 a set/2026.";
+    document.getElementById("apoTotal2026").textContent = fmtBRL(total2026);
+    document.getElementById("apoTotalHist").textContent = fmtBRL(totalHist);
+
+    var porAnoEl = document.getElementById("apoPorAno"); porAnoEl.innerHTML = "";
+    [2023,2024,2025,2026].forEach(function(y){
+      compareRow(porAnoEl, String(y) + (y===2026 ? " (parcial, até set)" : ""), porAno[y]||0);
+    });
+    compareRow(porAnoEl, "Total geral", totalGeral);
+
+    var porMesEl = document.getElementById("apoPorMes"); porMesEl.innerHTML = "";
+    APORTES_MESES.slice().reverse().forEach(function(r){
+      compareRow(porMesEl, r.label, r.valor);
+    });
+  }
+
   function renderCharts(scope){
     var months = [1,2,3,4,5,6,7,8,9];
     var rows = months.map(function(n){ return getScopeMonth(scope, n); });
@@ -1205,6 +1329,8 @@
     compareRow(cThb, "Margem", thbMargem, true);
     compareRow(cThb, "Retiradas CEO", thbTotal.retiradasCEO);
     compareRow(cThb, "Investimento em franquias", thbTotal.investFranquias);
+    compareRow(cThb, "Aportes de sócios", thbTotal.aportes);
+    compareRow(cThb, "Impacto líquido no caixa", thbTotal.impacto, false, true);
 
     var cSnd = document.getElementById("compareSndecor"); cSnd.innerHTML = "";
     compareRow(cSnd, "Faturamento", sndTotal.receita);
@@ -1212,6 +1338,7 @@
     compareRow(cSnd, "Resultado operacional", sndTotal.resultado, false, true);
     compareRow(cSnd, "Retiradas CEO", null);
     compareRow(cSnd, "Investimento em franquias", null);
+    compareRow(cSnd, "Aportes de sócios", null);
   }
 
   document.getElementById("companyChips").addEventListener("click", function(e){
