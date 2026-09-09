@@ -539,6 +539,7 @@
           <p class="kpi-caption" id="kpiMargemCaption">Quanto sobra de cada R$1 faturado.</p>
         </article>
       </div>
+      <p class="kpi-caption" id="auditNote" hidden style="margin-top:12px;"></p>
     </section>
 
     <section aria-label="Movimento do salão" id="opsSection">
@@ -646,6 +647,54 @@
       </div>
     </section>
 
+    <section aria-label="Auditoria financeira" id="auditSection">
+      <div class="section-heading"><h2>Auditoria Trinks × Stone</h2><span class="muted">The Hair Bar · agosto/2026 · realizada em duas fases</span></div>
+
+      <article class="kpi-card" style="margin-bottom:14px;">
+        <header><h3>Onde a auditoria chegou</h3></header>
+        <p class="kpi-caption" style="font-size:14px;line-height:1.65;">
+          A conferência entre o que saiu da conta Stone e o que estava lançado no Trinks foi feita em <strong>duas fases</strong>.
+          A primeira mapeou as divergências; a segunda aplicou as correções. Hoje a auditoria está
+          <strong id="audPct">85%</strong> concluída: dos valores que faltavam ser lançados no Trinks, a maior parte já foi corrigida,
+          e toda a diferença que sobra está identificada item a item — não há nada inexplicado.
+        </p>
+      </article>
+
+      <div class="kpi-grid secondary">
+        <article class="kpi-card">
+          <header><h3>Faltava no Trinks</h3></header>
+          <p class="kpi-value num" id="audFaltante">—</p>
+          <p class="kpi-caption">Despesas pagas pela Stone sem lançamento correspondente.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Já corrigido</h3></header>
+          <p class="kpi-value num" id="audCorrigido">—</p>
+          <p class="kpi-caption">Lançado no Trinks na segunda fase da auditoria.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Ainda a lançar</h3></header>
+          <p class="kpi-value num" id="audRestante">—</p>
+          <p class="kpi-caption">Despesas da Stone que seguem sem lançamento.</p>
+        </article>
+      </div>
+
+      <div class="compare-grid" style="margin-top:14px;">
+        <article class="compare-card">
+          <div class="compare-head"><div><strong>Saldo da conciliação</strong><span>Stone × Trinks atualizado</span></div></div>
+          <div class="compare-rows" id="audConciliacao"></div>
+          <p class="kpi-caption" style="margin-top:10px;">A Stone aparece maior — mas essa diferença está toda explicada ao lado.</p>
+        </article>
+        <article class="compare-card">
+          <div class="compare-head"><div><strong>De onde vem a diferença</strong><span>Cada real rastreado</span></div></div>
+          <div class="compare-rows" id="audDecomposicao"></div>
+          <p class="kpi-caption" style="margin-top:10px;">Valores positivos aumentam a diferença; negativos reduzem.</p>
+        </article>
+      </div>
+
+      <div class="section-heading" style="margin-top:20px;"><h2 style="font-size:17px;">O que ainda falta ajustar</h2><span class="muted">Pendências da primeira fase que seguem em aberto</span></div>
+      <div class="kpi-grid" id="audPendencias"></div>
+    </section>
+
     <section aria-label="Evolução mensal">
       <div class="section-heading"><h2>Evolução em 2026</h2><span class="muted" id="chartScopeLabel">Consolidado · janeiro a agosto</span></div>
       <div class="chart-section">
@@ -708,7 +757,7 @@
   </main>
 
   <footer>
-    <p id="footerNote">Receita da The Hair Bar até 07/09/2026 e despesas até 08/09/2026 (Relatório de Movimentações Financeiras e Despesas/Contas a Pagar). SN Table Decor: fluxo de caixa e planilha de despesas mensais. Agosto e setembro da The Hair Bar têm faturamento confirmado, mas as despesas ainda não foram separadas entre operação, retiradas da CEO e investimento em franquias — por isso o lucro operacional desses meses aparece como "em apuração".</p>
+    <p id="footerNote">Receita da The Hair Bar até 07/09/2026 e despesas até 08/09/2026 (Relatório de Movimentações Financeiras e Despesas/Contas a Pagar). SN Table Decor: fluxo de caixa e planilha de despesas mensais. Agosto e setembro da The Hair Bar aparecem marcados com asterisco: a despesa desses meses está em auditoria e ainda representa o desembolso total, sem separar as Retiradas CEO e o Investimento em Franquias. A conciliação entre a conta Stone e o Trinks está 85% concluída — a diferença remanescente de R$ 417,03 está integralmente explicada na seção de auditoria.</p>
   </footer>
 
 </div>
@@ -738,11 +787,11 @@
        clientes:666, atendimentos:1168, servicos:138413.00, produtos:921.00, pacotes:2925.00, descontos:-9649.80},
       {m:7, label:"Jul", receita:105295.30, despesa:103118.51, resultado:2176.79, retiradasCEO:9029.42, investFranquias:8850.00, impacto:-15702.63,
        clientes:624, atendimentos:1042, servicos:112601.00, produtos:575.00, pacotes:1600.00, descontos:-8698.55},
-      {m:8, label:"Ago", receita:97511.00, despesa:null, resultado:null, retiradasCEO:null, investFranquias:null, impacto:null,
-       despesaPendente:true, despesaBruta:103401.42,
+      {m:8, label:"Ago*", receita:97511.00, despesa:103401.42, resultado:-5890.42, retiradasCEO:null, investFranquias:null, impacto:null,
+       emAuditoria:true, despesaBruta:true,
        clientes:601, atendimentos:1010, servicos:105473.00, produtos:184.00, pacotes:1280.00, descontos:-8509.60},
-      {m:9, label:"Set*", receita:20875.95, despesa:null, resultado:null, retiradasCEO:null, investFranquias:null, impacto:null,
-       despesaPendente:true, despesaBruta:27984.37, parcial:true,
+      {m:9, label:"Set*", receita:20875.95, despesa:27984.37, resultado:-7108.42, retiradasCEO:null, investFranquias:null, impacto:null,
+       emAuditoria:true, despesaBruta:true, parcial:true,
        clientes:211, atendimentos:230, servicos:23068.00, produtos:135.00, pacotes:0.00, descontos:-2083.90}
     ]
   };
@@ -782,6 +831,32 @@
     semValor:["Iguá Marinha","Energisa Marinha"]
   };
 
+  // ---- Auditoria Trinks x Stone (The Hair Bar) ----
+  var AUDITORIA = {
+    percentual: 85,
+    faltanteOriginal: 7708.23, corrigido: 6884.37, restante: 823.86,
+    stone: 95889.41, trinks: 95472.38, diferenca: 417.03,
+    decomposicao:[
+      {nome:"Despesas da Stone ainda não lançadas no Trinks", valor: 823.86},
+      {nome:"Diferença de cartão (Trinks × Bradesco)", valor: 293.57},
+      {nome:"Segundo lançamento APR Gestão", valor: -650.00},
+      {nome:"Duplicidade Josceline", valor: -49.50},
+      {nome:"Diferença Kauan", valor: -0.90}
+    ],
+    pendencias:[
+      {titulo:"Josceline — duplicidade de R$ 49,50",
+       texto:"Continua lançada duas vezes no Trinks (R$ 49,50 cada), enquanto a Stone registra um único pagamento."},
+      {titulo:"APR Gestão — R$ 650,00 a confirmar",
+       texto:"Dois lançamentos de R$ 650,00 no Trinks contra um único pagamento na Stone. Falta confirmar se o segundo foi pago fora da Stone ou se é duplicidade."},
+      {titulo:"Kauan — diferença de R$ 0,90",
+       texto:"R$ 1.340,90 no Trinks contra R$ 1.340,00 na Stone."},
+      {titulo:"Datas divergentes em três lançamentos",
+       texto:"Josineide 03/08 no Trinks × 01/08 na Stone; Gleidielle 03/08 × 01/08; Daniela 05/08 × 06/08."},
+      {titulo:"Cartão — diferença de R$ 293,57",
+       texto:"Trinks registra R$ 4.750,30 em compras no cartão; a Stone mostra R$ 5.043,87 pagos ao Bradesco."}
+    ]
+  };
+
   var LAST_UPDATE = "8 de setembro de 2026";
   var CURRENT_MONTH = 9; // Setembro (parcial)
   var VALID_TO = 7;      // ultimo mes com despesas classificadas
@@ -805,15 +880,15 @@
   function combinedMonth(num){
     var t = monthByNum(THB, num);
     var s = monthByNum(SNDECOR, num);
-    var receita = 0, despesa = 0, pendente = false;
-    if (t && !t.noData){ receita += t.receita; if (t.despesaPendente){ pendente = true; } else { despesa += t.despesa; } }
-    if (s && !s.noData){ receita += s.receita; if (s.despesaPendente){ pendente = true; } else { despesa += s.despesa; } }
-    var resultado = pendente ? null : (receita - despesa);
+    var receita = 0, despesa = 0, aud = false;
+    if (t && !t.noData){ receita += t.receita; despesa += t.despesa; if (t.emAuditoria){ aud = true; } }
+    if (s && !s.noData){ receita += s.receita; despesa += s.despesa; if (s.emAuditoria){ aud = true; } }
+    var resultado = receita - despesa;
     var retiradasCEO = (t && !t.noData) ? t.retiradasCEO : null;
     var investFranquias = (t && !t.noData) ? t.investFranquias : null;
-    var impacto = (resultado !== null && retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias) : null;
-    return {m:num, receita:receita, despesa: pendente ? null : despesa, resultado:resultado,
-            retiradasCEO:retiradasCEO, investFranquias:investFranquias, impacto:impacto, despesaPendente:pendente};
+    var impacto = (retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias) : null;
+    return {m:num, receita:receita, despesa:despesa, resultado:resultado,
+            retiradasCEO:retiradasCEO, investFranquias:investFranquias, impacto:impacto, emAuditoria:aud};
   }
 
   function getScopeMonth(companyKey, num){
@@ -823,21 +898,21 @@
   }
 
   function sumMonths(companyKey, fromM, toM){
-    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, hasCeo=false, pendente=false;
+    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, hasCeo=false, aud=false;
     for (var n=fromM; n<=toM; n++){
       var rec = getScopeMonth(companyKey, n);
       if (!rec || rec.noData) continue;
       receita += rec.receita;
-      if (rec.despesaPendente || rec.despesa === null || rec.despesa === undefined){ pendente = true; }
-      else { despesa += rec.despesa; }
+      if (rec.despesa !== null && rec.despesa !== undefined){ despesa += rec.despesa; }
+      if (rec.emAuditoria){ aud = true; }
       if (rec.retiradasCEO !== null && rec.retiradasCEO !== undefined){ retiradasCEO += rec.retiradasCEO; hasCeo = true; }
       if (rec.investFranquias !== null && rec.investFranquias !== undefined){ investFranquias += rec.investFranquias; }
     }
-    var resultado = pendente ? null : (receita - despesa);
-    var impacto = (hasCeo && resultado !== null) ? (resultado - retiradasCEO - investFranquias) : null;
-    return {receita:receita, despesa: pendente ? null : despesa, resultado:resultado,
+    var resultado = receita - despesa;
+    var impacto = hasCeo ? (resultado - retiradasCEO - investFranquias) : null;
+    return {receita:receita, despesa:despesa, resultado:resultado,
             retiradasCEO: hasCeo?retiradasCEO:null, investFranquias: hasCeo?investFranquias:null,
-            impacto:impacto, despesaPendente:pendente};
+            impacto:impacto, emAuditoria:aud};
   }
 
   // ---- State ----
@@ -874,7 +949,8 @@
       periodData = { receita:m.receita, despesa:m.despesa, resultado:m.resultado,
         retiradasCEO: (m.retiradasCEO!==undefined? m.retiradasCEO : null),
         investFranquias: (m.investFranquias!==undefined? m.investFranquias : null),
-        impacto: (m.impacto!==undefined? m.impacto : null) };
+        impacto: (m.impacto!==undefined? m.impacto : null),
+        emAuditoria: !!m.emAuditoria };
       periodLabel = MONTH_NAME[CURRENT_MONTH] + "/2026 (mês em andamento)";
       isSinglePeriod = true;
     } else if (state.periodMode === "last"){
@@ -883,7 +959,8 @@
       periodData = { receita:m2.receita, despesa:m2.despesa, resultado:m2.resultado,
         retiradasCEO: (m2.retiradasCEO!==undefined? m2.retiradasCEO : null),
         investFranquias: (m2.investFranquias!==undefined? m2.investFranquias : null),
-        impacto: (m2.impacto!==undefined? m2.impacto : null) };
+        impacto: (m2.impacto!==undefined? m2.impacto : null),
+        emAuditoria: !!m2.emAuditoria };
       periodLabel = MONTH_NAME[lastM] + "/2026 (mês fechado)";
       isSinglePeriod = true;
     } else {
@@ -907,8 +984,9 @@
       ? (periodData.resultado / periodData.receita) : null;
 
     // Hero
-    var pend = periodData.resultado === null || periodData.resultado === undefined;
-    var isProfit = !pend && periodData.resultado >= 0;
+    var aud = !!periodData.emAuditoria;
+    var ast = aud ? " *" : "";
+    var isProfit = periodData.resultado >= 0;
     var heroSuffix = state.periodMode === "current" ? " neste mês."
       : state.periodMode === "last" ? " em " + MONTH_NAME[CURRENT_MONTH-1] + "."
       : (isSinglePeriod ? " no mês selecionado." : " no período selecionado.");
@@ -916,37 +994,32 @@
     var elN = document.getElementById("heroNumber");
     var elL = document.getElementById("heroLabel");
     var badge = document.getElementById("heroBadge");
-    if (pend){
-      elH.textContent = COMPANY_LABEL[scope] + " " + COMPANY_VERB[scope] + " com faturamento de " +
-        fmtBRL(periodData.receita) + heroSuffix.replace(".", " — o resultado operacional está sendo apurado.");
-      elN.textContent = fmtBRL(periodData.receita);
-      elN.className = "hero-number";
-      elL.textContent = "Faturamento do período";
-      badge.className = "hero-badge";
-      badge.textContent = "◷ Despesas em classificação";
-    } else {
-      elH.textContent = COMPANY_LABEL[scope] + " " + COMPANY_VERB[scope] + " com " + (isProfit ? "lucro operacional" : "prejuízo operacional") +
-        " de " + fmtBRL(Math.abs(periodData.resultado)) + heroSuffix;
-      elN.textContent = fmtBRL(Math.abs(periodData.resultado));
-      elN.className = "hero-number " + (isProfit ? "good" : "critical");
-      elL.textContent = isProfit ? "Lucro operacional" : "Prejuízo operacional";
-      badge.className = "hero-badge " + (isProfit ? "good" : "critical");
-      badge.textContent = (isProfit ? "▲ Lucro" : "▼ Prejuízo");
-    }
+    elH.textContent = COMPANY_LABEL[scope] + " " + COMPANY_VERB[scope] + " com " +
+      (isProfit ? (aud ? "resultado positivo" : "lucro operacional") : (aud ? "resultado negativo" : "prejuízo operacional")) +
+      " de " + fmtBRL(Math.abs(periodData.resultado)) + heroSuffix;
+    elN.textContent = fmtBRL(Math.abs(periodData.resultado)) + ast;
+    elN.className = "hero-number " + (isProfit ? "good" : "critical");
+    elL.textContent = isProfit ? (aud ? "Resultado do período *" : "Lucro operacional")
+                               : (aud ? "Resultado do período *" : "Prejuízo operacional");
+    badge.className = "hero-badge " + (isProfit ? "good" : "critical");
+    badge.textContent = (isProfit ? "▲ Positivo" : "▼ Negativo") + (aud ? " · em auditoria" : "");
     document.getElementById("heroReceita").textContent = fmtBRL(periodData.receita);
-    document.getElementById("heroDespesa").textContent = fmtBRL(periodData.despesa);
-    document.getElementById("heroMargem").textContent = fmtPct(margem);
+    document.getElementById("heroDespesa").textContent = fmtBRL(periodData.despesa) + ast;
+    document.getElementById("heroMargem").textContent = fmtPct(margem) + ast;
     document.getElementById("heroCaption").textContent =
       periodLabel + " · " + (scope === "all" ? "The Hair Bar (Jardins) & SN Table Decor (Loja Edifício Premier)" : (scope === "thb" ? THB.sub : SNDECOR.sub)) +
       " · Atualizado em " + LAST_UPDATE + ".";
 
     // KPI grid
     document.getElementById("kpiReceita").textContent = fmtBRL(periodData.receita);
-    document.getElementById("kpiDespesa").textContent = fmtBRL(periodData.despesa);
+    document.getElementById("kpiDespesa").textContent = fmtBRL(periodData.despesa) + ast;
     var kpiResultado = document.getElementById("kpiResultado");
-    kpiResultado.textContent = pend ? "Em apuração" : fmtBRL(periodData.resultado);
-    kpiResultado.style.color = pend ? "" : (isProfit ? "var(--good)" : "var(--critical)");
-    document.getElementById("kpiMargem").textContent = fmtPct(margem);
+    kpiResultado.textContent = fmtBRL(periodData.resultado) + ast;
+    kpiResultado.style.color = isProfit ? "var(--good)" : "var(--critical)";
+    document.getElementById("kpiMargem").textContent = fmtPct(margem) + ast;
+    var an = document.getElementById("auditNote");
+    an.hidden = !aud;
+    an.textContent = "* Agosto e setembro estão em auditoria. A despesa desses meses é o desembolso total do período — ainda inclui as Retiradas CEO e o Investimento em Franquias, que nos demais meses aparecem separados. Por isso o resultado deles é bruto, não o operacional.";
     document.getElementById("kpiMargemCaption").textContent =
       (scope === "sndecor" && margem !== null && Math.abs(margem) > 3)
         ? "Loja em fase de abertura — faturamento ainda baixo distorce este número."
@@ -977,6 +1050,7 @@
     renderCharts(scope);
     renderCompare();
     renderOps(opsFrom, opsTo, scope);
+    renderAuditoria(scope);
     renderAPagar(scope);
 
     document.querySelectorAll(".chip").forEach(function(c){
@@ -1020,6 +1094,32 @@
     compareRow(mix, "Descontos concedidos", o.descontos);
   }
 
+  function renderAuditoria(scope){
+    var sec = document.getElementById("auditSection");
+    if (scope === "sndecor"){ sec.hidden = true; return; }
+    sec.hidden = false;
+    var A = AUDITORIA;
+    document.getElementById("audPct").textContent = A.percentual + "%";
+    document.getElementById("audFaltante").textContent = fmtBRL(A.faltanteOriginal);
+    document.getElementById("audCorrigido").textContent = fmtBRL(A.corrigido);
+    var r = document.getElementById("audRestante");
+    r.textContent = fmtBRL(A.restante); r.style.color = "var(--critical)";
+    var conc = document.getElementById("audConciliacao"); conc.innerHTML = "";
+    compareRow(conc, "Stone", A.stone);
+    compareRow(conc, "Trinks atualizado", A.trinks);
+    compareRow(conc, "Diferença a maior na Stone", A.diferenca);
+    var dec = document.getElementById("audDecomposicao"); dec.innerHTML = "";
+    A.decomposicao.forEach(function(d){ compareRow(dec, d.nome, d.valor, false, true); });
+    compareRow(dec, "Total explicado", A.diferenca);
+    var pend = document.getElementById("audPendencias"); pend.innerHTML = "";
+    A.pendencias.forEach(function(p){
+      var art = document.createElement("article"); art.className = "kpi-card";
+      var h = document.createElement("h3"); h.textContent = p.titulo;
+      var t = document.createElement("p"); t.className = "kpi-caption"; t.textContent = p.texto;
+      art.appendChild(h); art.appendChild(t); pend.appendChild(art);
+    });
+  }
+
   function renderAPagar(scope){
     var sec = document.getElementById("aPagarSection");
     if (scope === "thb"){ sec.hidden = true; return; }
@@ -1052,7 +1152,7 @@
       var bD = document.createElement("div"); bD.className = "bar despesa";
       var semDesp = r.noData || r.despesa === null || r.despesa === undefined;
       bD.style.height = (semDesp ? 1 : Math.max(2, (r.despesa/maxVal)*100)) + "%";
-      bD.title = r.noData ? "Sem dados" : (semDesp ? "Despesas em classificação" : ("Despesas " + fmtBRL(r.despesa)));
+      bD.title = r.noData ? "Sem dados" : (semDesp ? "Sem despesa lançada" : ("Despesas " + fmtBRL(r.despesa) + (r.emAuditoria ? " (em auditoria)" : "")));
       group.appendChild(bR); group.appendChild(bD);
       barsEl.appendChild(group);
       var lbl = document.createElement("span"); lbl.textContent = (scope==="thb"?THB:scope==="sndecor"?SNDECOR:THB).months[i].label;
