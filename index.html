@@ -614,6 +614,37 @@
       </article>
     </section>
 
+    <section aria-label="Clientes e recebimentos" id="clientesSection">
+      <div class="section-heading"><h2>Clientes &amp; recebimentos</h2><span class="muted" id="clScopeLabel">SN Table Decor · Setembro/2026</span></div>
+      <div class="kpi-grid secondary">
+        <article class="kpi-card">
+          <header><h3>Recebido no período</h3></header>
+          <p class="kpi-value num" id="clRecebido">—</p>
+          <p class="kpi-caption">Pagamentos já liquidados dos clientes.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Pendente</h3>
+            <details class="info"><summary aria-label="O que é Pendente?">i</summary>
+              <p>Cliente já fez o pedido, mas o pagamento ainda não foi confirmado. Some no "a receber" — ainda não é dinheiro no caixa.</p>
+            </details>
+          </header>
+          <p class="kpi-value num" id="clPendente">—</p>
+          <p class="kpi-caption" id="clPendenteCaption">Pedido feito, pagamento ainda não confirmado.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Clientes no período</h3></header>
+          <p class="kpi-value num" id="clQtd">—</p>
+          <p class="kpi-caption">Pedidos com pagamento identificado, pagos ou pendentes.</p>
+        </article>
+      </div>
+      <article class="kpi-card" style="margin-top:14px;">
+        <header><h3 id="clListaTitulo">Clientes do período</h3></header>
+        <div class="compare-rows" id="clLista"></div>
+        <p class="kpi-caption" style="margin-top:10px;">Ordem: pendentes primeiro, depois do maior para o menor valor pago. Fonte: relatório de clientes por forma de pagamento (Trinks), pedidos até #72.</p>
+        <p class="kpi-caption" id="clNota" style="margin-top:6px;color:var(--critical);"></p>
+      </article>
+    </section>
+
     <section aria-label="Retiradas, investimentos e aportes">
       <div class="section-heading"><h2>CEO, expansão &amp; aportes</h2><span class="muted">Separado da operação de propósito — responde outra pergunta</span></div>
       <div class="kpi-grid">
@@ -912,6 +943,42 @@
     semValor:["Iguá Marinha","Energisa Marinha"]
   };
 
+  // ---- Clientes e recebimentos da SN Table Decor (relatório "Clientes / Forma de Pagamento", pedidos até #72) ----
+  // mes = mês de liquidação (pago) ou de vencimento (pendente). 3 lançamentos citados no resumo do relatório
+  // (1 Crédito + 2 Pix) não vieram no export recebido — ver nota em CLIENTES_SNDECOR_NOTA.
+  var CLIENTES_SNDECOR = [
+    {pedido:27, cliente:"Debora Cavalcanti De Albuquerque", forma:"Crédito", mes:3, data:"27/03/2026", valor:59.70, pago:true},
+    {pedido:31, cliente:"Eliete Wolf", forma:"Crédito", mes:4, data:"30/04/2026", valor:94.50, pago:true},
+    {pedido:37, cliente:"Germana Martins De Faro", forma:"Crédito", mes:5, data:"08/05/2026", valor:70.56, pago:true},
+    {pedido:39, cliente:"Mileny Montenegro", forma:"Crédito", mes:5, data:"09/05/2026", valor:88.72, pago:true},
+    {pedido:43, cliente:"Paula Franco Barreto", forma:"Crédito", mes:5, data:"15/05/2026", valor:214.70, pago:true},
+    {pedido:49, cliente:"Maria Rosa Melo Alves", forma:"Crédito", mes:6, data:"27/06/2026", valor:503.43, pago:true},
+    {pedido:50, cliente:"Diandra Melo", forma:"Crédito", mes:6, data:"30/06/2026", valor:158.40, pago:true},
+    {pedido:62, cliente:"Juliana Nogueira", forma:"Crédito", mes:8, data:"07/08/2026", valor:358.63, pago:true},
+    {pedido:44, cliente:"Daniela Santana", forma:"Débito", mes:5, data:"18/05/2026", valor:98.82, pago:true},
+    {pedido:45, cliente:"Allana Bomfim", forma:"Débito", mes:6, data:"05/06/2026", valor:29.75, pago:true},
+    {pedido:36, cliente:"François Ozanne", forma:"Pix", mes:5, data:"07/05/2026", valor:108.58, pago:true},
+    {pedido:66, cliente:"Prada Brasil Importação e Comércio de Artigos de Luxo Ltda", forma:"Pix", mes:9, data:"20/09/2026", valor:900.00, pago:false},
+    {pedido:29, cliente:"Juliana Brunow", forma:"Pix", mes:4, data:"02/04/2026", valor:150.12, pago:true},
+    {pedido:32, cliente:"Joyce Marisa Lima Dos Santos", forma:"Pix", mes:4, data:"30/04/2026", valor:176.30, pago:true},
+    {pedido:34, cliente:"Vida em Flor Boutique Floral e Decor Ltda", forma:"Pix", mes:5, data:"12/05/2026", valor:500.00, pago:true},
+    {pedido:34, cliente:"Vida em Flor Boutique Floral e Decor Ltda", forma:"Pix", mes:5, data:"27/05/2026", valor:509.58, pago:true},
+    {pedido:38, cliente:"Maelyn Goeking De Oliveira", forma:"Pix", mes:5, data:"25/05/2026", valor:303.60, pago:true},
+    {pedido:44, cliente:"Daniela Santana", forma:"Pix", mes:5, data:"18/05/2026", valor:18.36, pago:true},
+    {pedido:47, cliente:"Due Restaurante Ltda", forma:"Pix", mes:6, data:"10/06/2026", valor:25.20, pago:true},
+    {pedido:51, cliente:"Maria Rosa Melo Alves", forma:"Pix", mes:7, data:"02/07/2026", valor:76.14, pago:true},
+    {pedido:52, cliente:"Maira Maynart Franco Cabral Machado", forma:"Pix", mes:7, data:"13/07/2026", valor:118.00, pago:true},
+    {pedido:53, cliente:"Silvia Lorena Sobral Silveira", forma:"Pix", mes:8, data:"01/08/2026", valor:90.00, pago:true},
+    {pedido:55, cliente:"Juliana Nogueira", forma:"Pix", mes:7, data:"22/07/2026", valor:215.80, pago:true},
+    {pedido:59, cliente:"Marianna Souza Felipe", forma:"Pix", mes:7, data:"28/07/2026", valor:174.96, pago:true},
+    {pedido:63, cliente:"Juliana Nogueira", forma:"Pix", mes:8, data:"08/08/2026", valor:48.09, pago:true},
+    {pedido:64, cliente:"Juliana Nogueira", forma:"Pix", mes:8, data:"13/08/2026", valor:176.73, pago:true},
+    {pedido:67, cliente:"Silvia Lorena Sobral Silveira", forma:"Pix", mes:9, data:"08/09/2026", valor:875.07, pago:true},
+    {pedido:71, cliente:"Fabyana Barbosa Vieira", forma:"Pix", mes:9, data:"08/09/2026", valor:14.00, pago:true},
+    {pedido:72, cliente:"Jackeline Andrade De Pinho", forma:"Pix", mes:9, data:"08/09/2026", valor:118.51, pago:true}
+  ];
+  var CLIENTES_SNDECOR_NOTA = "O resumo do relatório indica 9 pagamentos por Crédito, 21 por Pix e 2 por Débito (32 no total); só 29 vieram no detalhamento recebido (8 + 19 + 2) — 3 lançamentos (1 Crédito + 2 Pix, ~R$ 193,76) ainda não identificados.";
+
   // ---- Auditoria Trinks x Stone (The Hair Bar) ----
   var AUDITORIA = {
     percentual: 85,
@@ -1145,6 +1212,7 @@
     renderOps(opsFrom, opsTo, scope);
     renderAuditoria(scope);
     renderAPagar(scope);
+    renderClientes(opsFrom, opsTo, scope);
     renderAportes(scope);
 
     document.querySelectorAll(".chip").forEach(function(c){
@@ -1227,6 +1295,53 @@
     SND_ABERTO.itens.forEach(function(it){ compareRow(lista, it.nome, it.valor); });
     document.getElementById("apNota").textContent =
       "Lançados sem valor na planilha, ainda a confirmar: " + SND_ABERTO.semValor.join(" e ") + ".";
+  }
+
+  function renderClientes(fromM, toM, scope){
+    var sec = document.getElementById("clientesSection");
+    if (scope === "thb"){ sec.hidden = true; return; }
+    sec.hidden = false;
+
+    var rows = CLIENTES_SNDECOR.filter(function(r){ return r.mes >= fromM && r.mes <= toM; });
+    var recebido = 0, pendente = 0, qtd = rows.length;
+    rows.forEach(function(r){ if (r.pago) recebido += r.valor; else pendente += r.valor; });
+
+    document.getElementById("clRecebido").textContent = fmtBRL(recebido);
+    var pEl = document.getElementById("clPendente");
+    pEl.textContent = fmtBRL(pendente);
+    pEl.style.color = pendente > 0 ? "var(--critical)" : "";
+    document.getElementById("clQtd").textContent = String(qtd);
+    document.getElementById("clPendenteCaption").textContent = pendente > 0
+      ? (rows.filter(function(r){return !r.pago;}).map(function(r){return r.cliente;}).join(", ")) + " — pedido feito, pagamento ainda não confirmado."
+      : "Pedido feito, pagamento ainda não confirmado.";
+
+    document.getElementById("clScopeLabel").textContent =
+      "SN Table Decor · " + (fromM === toM ? MONTH_NAME[fromM] : MONTH_NAME[fromM] + " a " + MONTH_NAME[toM]);
+    document.getElementById("clListaTitulo").textContent =
+      "Clientes de " + (fromM === toM ? MONTH_NAME[fromM] : MONTH_NAME[fromM] + " a " + MONTH_NAME[toM]);
+
+    var sorted = rows.slice().sort(function(a,b){
+      if (a.pago !== b.pago) return a.pago ? 1 : -1;
+      return b.valor - a.valor;
+    });
+    var lista = document.getElementById("clLista"); lista.innerHTML = "";
+    if (sorted.length === 0){
+      var empty = document.createElement("p"); empty.className = "kpi-caption"; empty.textContent = "Nenhum cliente identificado neste período.";
+      lista.appendChild(empty);
+    } else {
+      sorted.forEach(function(r){
+        var label = r.cliente + (r.pago ? "" : " · pendente desde " + r.data);
+        var row = document.createElement("div"); row.className = "compare-row";
+        var s = document.createElement("span"); s.textContent = label;
+        if (!r.pago) s.style.color = "var(--critical)";
+        var strong = document.createElement("strong"); strong.className = "num";
+        strong.textContent = fmtBRL(r.valor);
+        if (!r.pago) strong.style.color = "var(--critical)";
+        row.appendChild(s); row.appendChild(strong);
+        lista.appendChild(row);
+      });
+    }
+    document.getElementById("clNota").textContent = (toM >= 9) ? CLIENTES_SNDECOR_NOTA : "";
   }
 
   function renderAportes(scope){
