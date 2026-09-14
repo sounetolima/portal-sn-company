@@ -1,45 +1,475 @@
 {
-  "companies": [
+  "atualizadoEm": "2026-09-14",
+  "fontes": {
+    "theHairBar": "Trinks — Relatório de Movimentações Financeiras (receita até 07/09/2026) e Despesas/Contas a Pagar (até 08/09/2026)",
+    "snTableDecor": "Fluxo de Caixa 2026 (receita) e planilha Despesas Mensal (despesas)"
+  },
+  "observacao": "Agosto e setembro da The Hair Bar têm receita confirmada. A despesa bruta é conhecida (Ago R$ 103.401,42 · Set R$ 27.984,37) mas ainda NÃO foi separada entre Despesa Operacional, Retiradas CEO e Investimento Franquias — por isso o resultado operacional desses meses fica 'em apuração'.",
+  "empresas": [
     {
-      "id": "thb",
-      "name": "The Hair Bar",
-      "unit": "Jardins",
-      "city": "Aracaju/SE",
-      "months": [
-        {"month": "Janeiro", "year": 2026, "revenue": 97586.75, "expenses": 71436.27, "ceoWithdrawals": 11563.80, "investmentFranchise": 3500.00},
-        {"month": "Fevereiro", "year": 2026, "revenue": 87806.10, "expenses": 97981.96, "ceoWithdrawals": 6517.36, "investmentFranchise": 2500.00},
-        {"month": "Março", "year": 2026, "revenue": 99130.37, "expenses": 92187.55, "ceoWithdrawals": 7456.42, "investmentFranchise": 4500.00},
-        {"month": "Abril", "year": 2026, "revenue": 104782.47, "expenses": 96122.89, "ceoWithdrawals": 6942.39, "investmentFranchise": 9600.00},
-        {"month": "Maio", "year": 2026, "revenue": 118173.40, "expenses": 109286.78, "ceoWithdrawals": 8912.51, "investmentFranchise": 6950.00},
-        {"month": "Junho", "year": 2026, "revenue": 119597.11, "expenses": 121869.83, "ceoWithdrawals": 17498.69, "investmentFranchise": 4500.00},
-        {"month": "Julho", "year": 2026, "revenue": 105336.65, "expenses": 103118.51, "ceoWithdrawals": 9029.42, "investmentFranchise": 8850.00},
-        {"month": "Agosto", "year": 2026, "revenue": 51576.65, "expenses": 40802.41, "ceoWithdrawals": 7538.91, "investmentFranchise": 3319.00}
-      ]
+      "chave": "thb",
+      "nome": "The Hair Bar",
+      "unidade": "Jardins",
+      "cidade": "Aracaju/SE",
+      "meses": [
+        {
+          "mes": 1,
+          "receita": 97586.75,
+          "despesaOperacional": 71436.27,
+          "resultadoOperacional": 26150.48,
+          "retiradasCEO": 11563.8,
+          "investFranquias": 3500.0,
+          "impactoCaixa": 11086.68,
+          "clientes": 656,
+          "atendimentos": 938,
+          "servicos": 100452.0,
+          "produtos": 498.0,
+          "pacotes": 7792.1,
+          "descontos": -3278.0
+        },
+        {
+          "mes": 2,
+          "receita": 87806.1,
+          "despesaOperacional": 97981.96,
+          "resultadoOperacional": -10175.86,
+          "retiradasCEO": 6517.36,
+          "investFranquias": 2500.0,
+          "impactoCaixa": -19193.22,
+          "clientes": 593,
+          "atendimentos": 879,
+          "servicos": 91400.0,
+          "produtos": 351.0,
+          "pacotes": 8446.0,
+          "descontos": -2827.0
+        },
+        {
+          "mes": 3,
+          "receita": 99130.37,
+          "despesaOperacional": 92187.55,
+          "resultadoOperacional": 6942.82,
+          "retiradasCEO": 7456.42,
+          "investFranquias": 4500.0,
+          "impactoCaixa": -5013.6,
+          "clientes": 676,
+          "atendimentos": 1036,
+          "servicos": 105370.0,
+          "produtos": 208.0,
+          "pacotes": 4613.75,
+          "descontos": -4098.3
+        },
+        {
+          "mes": 4,
+          "receita": 104782.47,
+          "despesaOperacional": 96122.89,
+          "resultadoOperacional": 8659.58,
+          "retiradasCEO": 6942.39,
+          "investFranquias": 9600.0,
+          "impactoCaixa": -7882.81,
+          "clientes": 659,
+          "atendimentos": 1016,
+          "servicos": 104431.0,
+          "produtos": 758.0,
+          "pacotes": 10432.0,
+          "descontos": -4166.25
+        },
+        {
+          "mes": 5,
+          "receita": 118177.75,
+          "despesaOperacional": 109286.78,
+          "resultadoOperacional": 8890.97,
+          "retiradasCEO": 8912.51,
+          "investFranquias": 6950.0,
+          "impactoCaixa": -6971.54,
+          "clientes": 699,
+          "atendimentos": 1126,
+          "servicos": 133919.0,
+          "produtos": 472.0,
+          "pacotes": 4233.9,
+          "descontos": -9956.45
+        },
+        {
+          "mes": 6,
+          "receita": 119597.11,
+          "despesaOperacional": 121869.83,
+          "resultadoOperacional": -2272.72,
+          "retiradasCEO": 17498.69,
+          "investFranquias": 4500.0,
+          "impactoCaixa": -24271.41,
+          "clientes": 666,
+          "atendimentos": 1168,
+          "servicos": 138413.0,
+          "produtos": 921.0,
+          "pacotes": 2925.0,
+          "descontos": -9649.8
+        },
+        {
+          "mes": 7,
+          "receita": 105295.3,
+          "despesaOperacional": 103118.51,
+          "resultadoOperacional": 2176.79,
+          "retiradasCEO": 9029.42,
+          "investFranquias": 8850.0,
+          "impactoCaixa": -15702.63,
+          "clientes": 624,
+          "atendimentos": 1042,
+          "servicos": 112601.0,
+          "produtos": 575.0,
+          "pacotes": 1600.0,
+          "descontos": -8698.55
+        },
+        {
+          "mes": 8,
+          "receita": 97511.0,
+          "despesaBruta": 103401.42,
+          "despesaPendenteClassificacao": true,
+          "clientes": 601,
+          "atendimentos": 1010,
+          "servicos": 105473.0,
+          "produtos": 184.0,
+          "pacotes": 1280.0,
+          "descontos": -8509.6
+        },
+        {
+          "mes": 9,
+          "receita": 44602.17,
+          "despesaBruta": 29312.38,
+          "despesaPendenteClassificacao": true,
+          "parcial": true,
+          "clientes": 349,
+          "atendimentos": 467,
+          "servicos": 49010.0,
+          "produtos": 174.0,
+          "pacotes": 0.0,
+          "descontos": -4201.4
+        }
+      ],
+      "saldoAtual": {
+        "referencia": "2026-09-14",
+        "contaStone": 18568.51,
+        "caixaDinheiro": 2067.19,
+        "total": 20635.7
+      },
+      "links": {
+        "despesas": "https://www.trinks.com/BackOffice/Despesas",
+        "receitas": "https://www.trinks.com/BackOffice/Relatorios/Financeiro"
+      },
+      "vendasDiarias": {
+        "mes": "2026-09",
+        "total": 44602.17,
+        "dias": [
+          {
+            "data": "2026-09-01",
+            "valor": 3077.75
+          },
+          {
+            "data": "2026-09-02",
+            "valor": 2342.8
+          },
+          {
+            "data": "2026-09-03",
+            "valor": 2851.85
+          },
+          {
+            "data": "2026-09-04",
+            "valor": 5307.35
+          },
+          {
+            "data": "2026-09-05",
+            "valor": 7296.2
+          },
+          {
+            "data": "2026-09-08",
+            "valor": 2971.55
+          },
+          {
+            "data": "2026-09-09",
+            "valor": 3320.9
+          },
+          {
+            "data": "2026-09-10",
+            "valor": 2061.55
+          },
+          {
+            "data": "2026-09-11",
+            "valor": 4964.35
+          },
+          {
+            "data": "2026-09-12",
+            "valor": 10407.87
+          }
+        ]
+      },
+      "auditoria": {
+        "fonte": "Auditoria Financeira Trinks x Stone - Jul/Ago/Set 2026",
+        "percentualConcluido": 85,
+        "meses": [
+          {
+            "mes": "2026-07",
+            "trinks": 112182.74,
+            "stone": 112182.74,
+            "diferenca": 0,
+            "status": "conciliado"
+          },
+          {
+            "mes": "2026-08",
+            "trinks": 95472.38,
+            "stone": 95889.41,
+            "diferenca": 417.03,
+            "status": "pendencias"
+          },
+          {
+            "mes": "2026-09",
+            "trinks": 26101.77,
+            "stone": 49426.34,
+            "diferenca": 23324.57,
+            "status": "trinksDesatualizado",
+            "observacao": "Trinks lancado ate 02/09; Stone ate 11/09"
+          }
+        ],
+        "agostoDecomposicao": [
+          {
+            "item": "Pagar.me 20/08 - falta lancar",
+            "valor": 643.86
+          },
+          {
+            "item": "Fernanda da Silva 31/08 - falta lancar",
+            "valor": 180.0
+          },
+          {
+            "item": "Cartao Bradesco - sem composicao",
+            "valor": 293.57
+          },
+          {
+            "item": "APR Gestao - duplicidade no Trinks",
+            "valor": -650.0
+          },
+          {
+            "item": "Josceline - duplicidade no Trinks",
+            "valor": -49.5
+          },
+          {
+            "item": "Kauan - diferenca",
+            "valor": -0.9
+          }
+        ],
+        "datasDivergentesAgosto": [
+          {
+            "nome": "Josineide",
+            "valor": 15.4,
+            "trinks": "03/08",
+            "stone": "01/08"
+          },
+          {
+            "nome": "Gleidielle",
+            "valor": 1551.25,
+            "trinks": "03/08",
+            "stone": "01/08"
+          },
+          {
+            "nome": "Daniela",
+            "valor": 1703.6,
+            "trinks": "05/08",
+            "stone": "06/08"
+          }
+        ]
+      },
+      "pendenciasSetembro": {
+        "ate0209": {
+          "total": 807.8,
+          "itens": [
+            {
+              "nome": "Lorena Santana 01/09",
+              "valor": 807.5,
+              "tipo": "faltaLancar"
+            },
+            {
+              "nome": "LU / Lucimara 01/09",
+              "valor": 0.3,
+              "tipo": "lancadoAMenos"
+            }
+          ]
+        },
+        "de0309a1109": {
+          "total": 22517.37,
+          "itens": [
+            {
+              "data": "2026-09-03",
+              "favorecido": "GAT Gestao",
+              "valor": 3000.0
+            },
+            {
+              "data": "2026-09-04",
+              "favorecido": "Make Beauty Cosmeticos",
+              "valor": 1000.8
+            },
+            {
+              "data": "2026-09-05",
+              "favorecido": "Kauan",
+              "valor": 1323.73
+            },
+            {
+              "data": "2026-09-05",
+              "favorecido": "Daniela",
+              "valor": 1589.02
+            },
+            {
+              "data": "2026-09-05",
+              "favorecido": "Josineide",
+              "valor": 1793.95
+            },
+            {
+              "data": "2026-09-05",
+              "favorecido": "Magna",
+              "valor": 1855.5
+            },
+            {
+              "data": "2026-09-05",
+              "favorecido": "Valdirene",
+              "valor": 3170.63
+            },
+            {
+              "data": "2026-09-06",
+              "favorecido": "Anderson",
+              "valor": 4452.52
+            },
+            {
+              "data": "2026-09-11",
+              "favorecido": "Rafael Carvalho",
+              "valor": 210.0
+            },
+            {
+              "data": "2026-09-11",
+              "favorecido": "Energisa",
+              "valor": 4121.22
+            }
+          ]
+        },
+        "totalPendente": 23325.17,
+        "impacto": {
+          "receita": 44602.17,
+          "despesaTrinks": 29312.38,
+          "resultadoTrinks": 15289.79,
+          "despesaProjetada": 52637.55,
+          "resultadoProjetado": -8035.38
+        }
+      }
     },
     {
-      "id": "sndecor",
-      "name": "SN Table Decor",
-      "unit": "Matriz",
-      "city": "Aracaju/SE",
-      "months": []
+      "chave": "sndecor",
+      "nome": "SN Table Decor",
+      "unidade": "Loja Edifício Premier",
+      "cidade": "Aracaju/SE",
+      "meses": [
+        {
+          "mes": 1,
+          "semDados": true
+        },
+        {
+          "mes": 2,
+          "receita": 0.0,
+          "despesa": 29049.62,
+          "resultado": -29049.62
+        },
+        {
+          "mes": 3,
+          "receita": 59.7,
+          "despesa": 34935.12,
+          "resultado": -34875.42
+        },
+        {
+          "mes": 4,
+          "receita": 420.92,
+          "despesa": 24848.29,
+          "resultado": -24427.37
+        },
+        {
+          "mes": 5,
+          "receita": 1912.92,
+          "despesa": 9747.45,
+          "resultado": -7834.53
+        },
+        {
+          "mes": 6,
+          "receita": 716.78,
+          "despesa": 15730.28,
+          "resultado": -15013.5
+        },
+        {
+          "mes": 7,
+          "receita": 584.9,
+          "despesa": 12008.43,
+          "resultado": -11423.53
+        },
+        {
+          "mes": 8,
+          "receita": 829.85,
+          "despesa": 21751.06,
+          "resultado": -20921.21
+        },
+        {
+          "mes": 9,
+          "receita": 1007.58,
+          "despesa": 16363.95,
+          "resultado": -15356.37,
+          "parcial": true
+        }
+      ],
+      "contasEmAberto": {
+        "mes": "2026-09",
+        "total": 16363.95,
+        "pago": 5680.94,
+        "aberto": 10683.01,
+        "itens": [
+          {
+            "nome": "Aluguel",
+            "valor": 5520.0
+          },
+          {
+            "nome": "Full Fit",
+            "valor": 2357.92
+          },
+          {
+            "nome": "Condomínio",
+            "valor": 768.83
+          },
+          {
+            "nome": "Energisa Jardins",
+            "valor": 573.01
+          },
+          {
+            "nome": "Luiz Felipe (marketing)",
+            "valor": 500.0
+          },
+          {
+            "nome": "IPTU",
+            "valor": 311.99
+          },
+          {
+            "nome": "TLF",
+            "valor": 196.23
+          },
+          {
+            "nome": "Jaelisson (limpeza de vidros)",
+            "valor": 150.0
+          },
+          {
+            "nome": "Vivo",
+            "valor": 115.14
+          },
+          {
+            "nome": "Internet Jardins",
+            "valor": 99.9
+          },
+          {
+            "nome": "Internet Marinha",
+            "valor": 89.99
+          }
+        ],
+        "semValorLancado": [
+          "Iguá Marinha",
+          "Energisa Marinha"
+        ]
+      }
     }
-  ],
-  "aportesSocios": {
-    "descricao": "Apoio financeiro dos sócios injetado na The Hair Bar - Franquias de Beleza LTDA. Não é receita da operação; soma no Impacto Líquido no Caixa dos meses de 2026.",
-    "origem": ["AJU PRAIA", "Gilberto Vieira Advocacia"],
-    "totalGeral": 681949.33,
-    "porAno": {"2023": 31007.07, "2024": 416710.64, "2025": 142088.05, "2026": 92143.57},
-    "porMes2026": {
-      "01": 3000.00, "02": 4000.00, "03": 16777.45, "04": 6471.03,
-      "05": 17724.97, "06": 17728.87, "07": 23441.25, "08": 0.00, "09": 3000.00
-    }
-  },
-  "clientesRecebimentosSNDecor": {
-    "descricao": "Relatório de clientes por forma de pagamento (Trinks), pedidos até #66. Recebido = pagamentos liquidados; pendente = pedido feito, pagamento ainda não confirmado.",
-    "pendente": {"cliente": "Prada Brasil Importação e Comércio de Artigos de Luxo Ltda", "pedido": 66, "forma": "Pix", "vencimento": "20/09/2026", "valor": 900.00},
-    "totalRecebidoVisivel": 5376.25,
-    "totalPendenteVisivel": 900.00,
-    "lancamentosVisiveis": 29,
-    "nota": "Resumo do relatório indica 32 lançamentos (9 Crédito + 21 Pix + 2 Débito); só 29 vieram no detalhamento (8 + 19 + 2) — 3 lançamentos (1 Crédito + 2 Pix, ~R$ 193,76) ainda não identificados."
-  }
+  ]
 }
