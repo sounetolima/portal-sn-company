@@ -1,475 +1,1104 @@
 {
-  "atualizadoEm": "2026-09-14",
-  "fontes": {
-    "theHairBar": "Trinks — Relatório de Movimentações Financeiras (receita até 07/09/2026) e Despesas/Contas a Pagar (até 08/09/2026)",
-    "snTableDecor": "Fluxo de Caixa 2026 (receita) e planilha Despesas Mensal (despesas)"
+  "_meta": {
+    "lastUpdate": "17 de setembro de 2026",
+    "note": "Espelho estruturado dos dados do index.html (fonte de verdade é sempre o index.html — este arquivo é só para consulta/automação futura). Gerado a partir das variáveis reais do portal, não redigitado.",
+    "sourceLinks": {
+      "despesas": "https://www.trinks.com/BackOffice/Despesas",
+      "receitas": "https://www.trinks.com/BackOffice/Relatorios/Financeiro"
+    }
   },
-  "observacao": "Agosto e setembro da The Hair Bar têm receita confirmada. A despesa bruta é conhecida (Ago R$ 103.401,42 · Set R$ 27.984,37) mas ainda NÃO foi separada entre Despesa Operacional, Retiradas CEO e Investimento Franquias — por isso o resultado operacional desses meses fica 'em apuração'.",
-  "empresas": [
+  "companies": [
     {
-      "chave": "thb",
-      "nome": "The Hair Bar",
-      "unidade": "Jardins",
-      "cidade": "Aracaju/SE",
-      "meses": [
+      "id": "thb",
+      "name": "The Hair Bar",
+      "unit": "Jardins",
+      "city": "Aracaju/SE",
+      "hasCeoFields": true,
+      "months": [
         {
-          "mes": 1,
-          "receita": 97586.75,
-          "despesaOperacional": 71436.27,
-          "resultadoOperacional": 26150.48,
-          "retiradasCEO": 11563.8,
-          "investFranquias": 3500.0,
-          "impactoCaixa": 11086.68,
-          "clientes": 656,
-          "atendimentos": 938,
-          "servicos": 100452.0,
-          "produtos": 498.0,
-          "pacotes": 7792.1,
-          "descontos": -3278.0
+          "month": "Jan",
+          "monthNum": 1,
+          "year": 2026,
+          "revenue": 97586.75,
+          "expenses": 71436.27,
+          "result": 26150.48,
+          "ceoWithdrawals": 11563.8,
+          "investmentFranchise": 3500,
+          "aportes": 3000,
+          "netCashImpact": 14086.68,
+          "clients": 656,
+          "appointments": 938,
+          "services": 100452,
+          "products": 498,
+          "packages": 7792.1,
+          "discounts": -3278,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 2,
-          "receita": 87806.1,
-          "despesaOperacional": 97981.96,
-          "resultadoOperacional": -10175.86,
-          "retiradasCEO": 6517.36,
-          "investFranquias": 2500.0,
-          "impactoCaixa": -19193.22,
-          "clientes": 593,
-          "atendimentos": 879,
-          "servicos": 91400.0,
-          "produtos": 351.0,
-          "pacotes": 8446.0,
-          "descontos": -2827.0
+          "month": "Fev",
+          "monthNum": 2,
+          "year": 2026,
+          "revenue": 87806.1,
+          "expenses": 97981.96,
+          "result": -10175.86,
+          "ceoWithdrawals": 6517.36,
+          "investmentFranchise": 2500,
+          "aportes": 4000,
+          "netCashImpact": -15193.22,
+          "clients": 593,
+          "appointments": 879,
+          "services": 91400,
+          "products": 351,
+          "packages": 8446,
+          "discounts": -2827,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 3,
-          "receita": 99130.37,
-          "despesaOperacional": 92187.55,
-          "resultadoOperacional": 6942.82,
-          "retiradasCEO": 7456.42,
-          "investFranquias": 4500.0,
-          "impactoCaixa": -5013.6,
-          "clientes": 676,
-          "atendimentos": 1036,
-          "servicos": 105370.0,
-          "produtos": 208.0,
-          "pacotes": 4613.75,
-          "descontos": -4098.3
+          "month": "Mar",
+          "monthNum": 3,
+          "year": 2026,
+          "revenue": 99130.37,
+          "expenses": 92187.55,
+          "result": 6942.82,
+          "ceoWithdrawals": 7456.42,
+          "investmentFranchise": 4500,
+          "aportes": 16777.45,
+          "netCashImpact": 11763.85,
+          "clients": 676,
+          "appointments": 1036,
+          "services": 105370,
+          "products": 208,
+          "packages": 4613.75,
+          "discounts": -4098.3,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 4,
-          "receita": 104782.47,
-          "despesaOperacional": 96122.89,
-          "resultadoOperacional": 8659.58,
-          "retiradasCEO": 6942.39,
-          "investFranquias": 9600.0,
-          "impactoCaixa": -7882.81,
-          "clientes": 659,
-          "atendimentos": 1016,
-          "servicos": 104431.0,
-          "produtos": 758.0,
-          "pacotes": 10432.0,
-          "descontos": -4166.25
+          "month": "Abr",
+          "monthNum": 4,
+          "year": 2026,
+          "revenue": 104782.47,
+          "expenses": 96122.89,
+          "result": 8659.58,
+          "ceoWithdrawals": 6942.39,
+          "investmentFranchise": 9600,
+          "aportes": 6471.03,
+          "netCashImpact": -1411.78,
+          "clients": 659,
+          "appointments": 1016,
+          "services": 104431,
+          "products": 758,
+          "packages": 10432,
+          "discounts": -4166.25,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 5,
-          "receita": 118177.75,
-          "despesaOperacional": 109286.78,
-          "resultadoOperacional": 8890.97,
-          "retiradasCEO": 8912.51,
-          "investFranquias": 6950.0,
-          "impactoCaixa": -6971.54,
-          "clientes": 699,
-          "atendimentos": 1126,
-          "servicos": 133919.0,
-          "produtos": 472.0,
-          "pacotes": 4233.9,
-          "descontos": -9956.45
+          "month": "Mai",
+          "monthNum": 5,
+          "year": 2026,
+          "revenue": 118177.75,
+          "expenses": 109286.78,
+          "result": 8890.97,
+          "ceoWithdrawals": 8912.51,
+          "investmentFranchise": 6950,
+          "aportes": 17724.97,
+          "netCashImpact": 10753.43,
+          "clients": 699,
+          "appointments": 1126,
+          "services": 133919,
+          "products": 472,
+          "packages": 4233.9,
+          "discounts": -9956.45,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 6,
-          "receita": 119597.11,
-          "despesaOperacional": 121869.83,
-          "resultadoOperacional": -2272.72,
-          "retiradasCEO": 17498.69,
-          "investFranquias": 4500.0,
-          "impactoCaixa": -24271.41,
-          "clientes": 666,
-          "atendimentos": 1168,
-          "servicos": 138413.0,
-          "produtos": 921.0,
-          "pacotes": 2925.0,
-          "descontos": -9649.8
+          "month": "Jun",
+          "monthNum": 6,
+          "year": 2026,
+          "revenue": 119597.11,
+          "expenses": 121869.83,
+          "result": -2272.72,
+          "ceoWithdrawals": 17498.69,
+          "investmentFranchise": 4500,
+          "aportes": 17728.87,
+          "netCashImpact": -6542.54,
+          "clients": 666,
+          "appointments": 1168,
+          "services": 138413,
+          "products": 921,
+          "packages": 2925,
+          "discounts": -9649.8,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 7,
-          "receita": 105295.3,
-          "despesaOperacional": 103118.51,
-          "resultadoOperacional": 2176.79,
-          "retiradasCEO": 9029.42,
-          "investFranquias": 8850.0,
-          "impactoCaixa": -15702.63,
-          "clientes": 624,
-          "atendimentos": 1042,
-          "servicos": 112601.0,
-          "produtos": 575.0,
-          "pacotes": 1600.0,
-          "descontos": -8698.55
+          "month": "Jul",
+          "monthNum": 7,
+          "year": 2026,
+          "revenue": 105295.3,
+          "expenses": 103118.51,
+          "result": 2176.79,
+          "ceoWithdrawals": 9029.42,
+          "investmentFranchise": 8850,
+          "aportes": 23441.25,
+          "netCashImpact": 7738.62,
+          "clients": 624,
+          "appointments": 1042,
+          "services": 112601,
+          "products": 575,
+          "packages": 1600,
+          "discounts": -8698.55,
+          "underAudit": false,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 8,
-          "receita": 97511.0,
-          "despesaBruta": 103401.42,
-          "despesaPendenteClassificacao": true,
-          "clientes": 601,
-          "atendimentos": 1010,
-          "servicos": 105473.0,
-          "produtos": 184.0,
-          "pacotes": 1280.0,
-          "descontos": -8509.6
+          "month": "Ago",
+          "monthNum": 8,
+          "year": 2026,
+          "revenue": 97511,
+          "expenses": 103401.42,
+          "result": -5890.42,
+          "ceoWithdrawals": null,
+          "investmentFranchise": null,
+          "aportes": 0,
+          "netCashImpact": null,
+          "clients": 601,
+          "appointments": 1010,
+          "services": 105473,
+          "products": 184,
+          "packages": 1280,
+          "discounts": -8509.6,
+          "underAudit": true,
+          "grossExpenseOriginal": null,
+          "partial": false,
+          "note": null
         },
         {
-          "mes": 9,
-          "receita": 44602.17,
-          "despesaBruta": 29312.38,
-          "despesaPendenteClassificacao": true,
-          "parcial": true,
-          "clientes": 349,
-          "atendimentos": 467,
-          "servicos": 49010.0,
-          "produtos": 174.0,
-          "pacotes": 0.0,
-          "descontos": -4201.4
+          "month": "Set",
+          "monthNum": 9,
+          "year": 2026,
+          "revenue": 53932.27,
+          "expenses": 41698.98,
+          "result": 12233.29,
+          "ceoWithdrawals": 8289.15,
+          "investmentFranchise": 4527,
+          "aportes": 3000,
+          "netCashImpact": 2417.14,
+          "clients": 389,
+          "appointments": 525,
+          "services": 55898,
+          "products": 174,
+          "packages": 0,
+          "discounts": -4653.6,
+          "underAudit": false,
+          "grossExpenseOriginal": 54515.13,
+          "partial": true,
+          "note": "Clientes/atendimentos/mix ainda refletem só até 15/09 — Neto não enviou esses números para 16/09."
         }
-      ],
-      "saldoAtual": {
-        "referencia": "2026-09-14",
-        "contaStone": 18568.51,
-        "caixaDinheiro": 2067.19,
-        "total": 20635.7
-      },
-      "links": {
-        "despesas": "https://www.trinks.com/BackOffice/Despesas",
-        "receitas": "https://www.trinks.com/BackOffice/Relatorios/Financeiro"
-      },
-      "vendasDiarias": {
-        "mes": "2026-09",
-        "total": 44602.17,
-        "dias": [
-          {
-            "data": "2026-09-01",
-            "valor": 3077.75
-          },
-          {
-            "data": "2026-09-02",
-            "valor": 2342.8
-          },
-          {
-            "data": "2026-09-03",
-            "valor": 2851.85
-          },
-          {
-            "data": "2026-09-04",
-            "valor": 5307.35
-          },
-          {
-            "data": "2026-09-05",
-            "valor": 7296.2
-          },
-          {
-            "data": "2026-09-08",
-            "valor": 2971.55
-          },
-          {
-            "data": "2026-09-09",
-            "valor": 3320.9
-          },
-          {
-            "data": "2026-09-10",
-            "valor": 2061.55
-          },
-          {
-            "data": "2026-09-11",
-            "valor": 4964.35
-          },
-          {
-            "data": "2026-09-12",
-            "valor": 10407.87
-          }
-        ]
-      },
-      "auditoria": {
-        "fonte": "Auditoria Financeira Trinks x Stone - Jul/Ago/Set 2026",
-        "percentualConcluido": 85,
-        "meses": [
-          {
-            "mes": "2026-07",
-            "trinks": 112182.74,
-            "stone": 112182.74,
-            "diferenca": 0,
-            "status": "conciliado"
-          },
-          {
-            "mes": "2026-08",
-            "trinks": 95472.38,
-            "stone": 95889.41,
-            "diferenca": 417.03,
-            "status": "pendencias"
-          },
-          {
-            "mes": "2026-09",
-            "trinks": 26101.77,
-            "stone": 49426.34,
-            "diferenca": 23324.57,
-            "status": "trinksDesatualizado",
-            "observacao": "Trinks lancado ate 02/09; Stone ate 11/09"
-          }
-        ],
-        "agostoDecomposicao": [
-          {
-            "item": "Pagar.me 20/08 - falta lancar",
-            "valor": 643.86
-          },
-          {
-            "item": "Fernanda da Silva 31/08 - falta lancar",
-            "valor": 180.0
-          },
-          {
-            "item": "Cartao Bradesco - sem composicao",
-            "valor": 293.57
-          },
-          {
-            "item": "APR Gestao - duplicidade no Trinks",
-            "valor": -650.0
-          },
-          {
-            "item": "Josceline - duplicidade no Trinks",
-            "valor": -49.5
-          },
-          {
-            "item": "Kauan - diferenca",
-            "valor": -0.9
-          }
-        ],
-        "datasDivergentesAgosto": [
-          {
-            "nome": "Josineide",
-            "valor": 15.4,
-            "trinks": "03/08",
-            "stone": "01/08"
-          },
-          {
-            "nome": "Gleidielle",
-            "valor": 1551.25,
-            "trinks": "03/08",
-            "stone": "01/08"
-          },
-          {
-            "nome": "Daniela",
-            "valor": 1703.6,
-            "trinks": "05/08",
-            "stone": "06/08"
-          }
-        ]
-      },
-      "pendenciasSetembro": {
-        "ate0209": {
-          "total": 807.8,
-          "itens": [
-            {
-              "nome": "Lorena Santana 01/09",
-              "valor": 807.5,
-              "tipo": "faltaLancar"
-            },
-            {
-              "nome": "LU / Lucimara 01/09",
-              "valor": 0.3,
-              "tipo": "lancadoAMenos"
-            }
-          ]
-        },
-        "de0309a1109": {
-          "total": 22517.37,
-          "itens": [
-            {
-              "data": "2026-09-03",
-              "favorecido": "GAT Gestao",
-              "valor": 3000.0
-            },
-            {
-              "data": "2026-09-04",
-              "favorecido": "Make Beauty Cosmeticos",
-              "valor": 1000.8
-            },
-            {
-              "data": "2026-09-05",
-              "favorecido": "Kauan",
-              "valor": 1323.73
-            },
-            {
-              "data": "2026-09-05",
-              "favorecido": "Daniela",
-              "valor": 1589.02
-            },
-            {
-              "data": "2026-09-05",
-              "favorecido": "Josineide",
-              "valor": 1793.95
-            },
-            {
-              "data": "2026-09-05",
-              "favorecido": "Magna",
-              "valor": 1855.5
-            },
-            {
-              "data": "2026-09-05",
-              "favorecido": "Valdirene",
-              "valor": 3170.63
-            },
-            {
-              "data": "2026-09-06",
-              "favorecido": "Anderson",
-              "valor": 4452.52
-            },
-            {
-              "data": "2026-09-11",
-              "favorecido": "Rafael Carvalho",
-              "valor": 210.0
-            },
-            {
-              "data": "2026-09-11",
-              "favorecido": "Energisa",
-              "valor": 4121.22
-            }
-          ]
-        },
-        "totalPendente": 23325.17,
-        "impacto": {
-          "receita": 44602.17,
-          "despesaTrinks": 29312.38,
-          "resultadoTrinks": 15289.79,
-          "despesaProjetada": 52637.55,
-          "resultadoProjetado": -8035.38
-        }
-      }
+      ]
     },
     {
-      "chave": "sndecor",
-      "nome": "SN Table Decor",
-      "unidade": "Loja Edifício Premier",
-      "cidade": "Aracaju/SE",
-      "meses": [
+      "id": "sndecor",
+      "name": "SN Table Decor",
+      "unit": "Loja Edifício Premier",
+      "city": "Aracaju/SE",
+      "hasCeoFields": false,
+      "months": [
         {
-          "mes": 1,
-          "semDados": true
+          "month": "Jan",
+          "monthNum": 1,
+          "year": 2026,
+          "revenue": 0,
+          "expenses": 0,
+          "result": 0,
+          "netCashImpact": null,
+          "noData": true,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 2,
-          "receita": 0.0,
-          "despesa": 29049.62,
-          "resultado": -29049.62
+          "month": "Fev",
+          "monthNum": 2,
+          "year": 2026,
+          "revenue": 0,
+          "expenses": 29049.62,
+          "result": -29049.62,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 3,
-          "receita": 59.7,
-          "despesa": 34935.12,
-          "resultado": -34875.42
+          "month": "Mar",
+          "monthNum": 3,
+          "year": 2026,
+          "revenue": 59.7,
+          "expenses": 34935.12,
+          "result": -34875.42,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 4,
-          "receita": 420.92,
-          "despesa": 24848.29,
-          "resultado": -24427.37
+          "month": "Abr",
+          "monthNum": 4,
+          "year": 2026,
+          "revenue": 420.92,
+          "expenses": 24848.29,
+          "result": -24427.37,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 5,
-          "receita": 1912.92,
-          "despesa": 9747.45,
-          "resultado": -7834.53
+          "month": "Mai",
+          "monthNum": 5,
+          "year": 2026,
+          "revenue": 1912.92,
+          "expenses": 9747.45,
+          "result": -7834.53,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 6,
-          "receita": 716.78,
-          "despesa": 15730.28,
-          "resultado": -15013.5
+          "month": "Jun",
+          "monthNum": 6,
+          "year": 2026,
+          "revenue": 716.78,
+          "expenses": 15730.28,
+          "result": -15013.5,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 7,
-          "receita": 584.9,
-          "despesa": 12008.43,
-          "resultado": -11423.53
+          "month": "Jul",
+          "monthNum": 7,
+          "year": 2026,
+          "revenue": 584.9,
+          "expenses": 12008.43,
+          "result": -11423.53,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 8,
-          "receita": 829.85,
-          "despesa": 21751.06,
-          "resultado": -20921.21
+          "month": "Ago",
+          "monthNum": 8,
+          "year": 2026,
+          "revenue": 829.85,
+          "expenses": 21751.06,
+          "result": -20921.21,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": false,
+          "underAudit": false
         },
         {
-          "mes": 9,
-          "receita": 1007.58,
-          "despesa": 16363.95,
-          "resultado": -15356.37,
-          "parcial": true
+          "month": "Set",
+          "monthNum": 9,
+          "year": 2026,
+          "revenue": 1007.58,
+          "expenses": 16363.95,
+          "result": -15356.37,
+          "netCashImpact": null,
+          "noData": false,
+          "partial": true,
+          "underAudit": false
         }
-      ],
-      "contasEmAberto": {
-        "mes": "2026-09",
-        "total": 16363.95,
-        "pago": 5680.94,
-        "aberto": 10683.01,
-        "itens": [
-          {
-            "nome": "Aluguel",
-            "valor": 5520.0
-          },
-          {
-            "nome": "Full Fit",
-            "valor": 2357.92
-          },
-          {
-            "nome": "Condomínio",
-            "valor": 768.83
-          },
-          {
-            "nome": "Energisa Jardins",
-            "valor": 573.01
-          },
-          {
-            "nome": "Luiz Felipe (marketing)",
-            "valor": 500.0
-          },
-          {
-            "nome": "IPTU",
-            "valor": 311.99
-          },
-          {
-            "nome": "TLF",
-            "valor": 196.23
-          },
-          {
-            "nome": "Jaelisson (limpeza de vidros)",
-            "valor": 150.0
-          },
-          {
-            "nome": "Vivo",
-            "valor": 115.14
-          },
-          {
-            "nome": "Internet Jardins",
-            "valor": 99.9
-          },
-          {
-            "nome": "Internet Marinha",
-            "valor": 89.99
-          }
-        ],
-        "semValorLancado": [
-          "Iguá Marinha",
-          "Energisa Marinha"
-        ]
-      }
+      ]
     }
-  ]
+  ],
+  "aportesSocios": {
+    "descricao": "Apoio financeiro dos sócios injetado na The Hair Bar - Franquias de Beleza LTDA. Não é receita da operação; soma no Impacto Líquido no Caixa dos meses de 2026.",
+    "origem": [
+      "AJU PRAIA",
+      "Gilberto Vieira Advocacia"
+    ],
+    "totalGeral": 681949.33,
+    "porAno": {
+      "2023": 31007.07,
+      "2024": 416710.64,
+      "2025": 142088.05,
+      "2026": 92143.57
+    },
+    "historicoCompleto": [
+      {
+        "ano": 2023,
+        "mes": 11,
+        "label": "Nov/2023",
+        "valor": 14243.35
+      },
+      {
+        "ano": 2023,
+        "mes": 12,
+        "label": "Dez/2023",
+        "valor": 16763.72
+      },
+      {
+        "ano": 2024,
+        "mes": 1,
+        "label": "Jan/2024",
+        "valor": 24500
+      },
+      {
+        "ano": 2024,
+        "mes": 2,
+        "label": "Fev/2024",
+        "valor": 28900
+      },
+      {
+        "ano": 2024,
+        "mes": 3,
+        "label": "Mar/2024",
+        "valor": 31200
+      },
+      {
+        "ano": 2024,
+        "mes": 4,
+        "label": "Abr/2024",
+        "valor": 35400
+      },
+      {
+        "ano": 2024,
+        "mes": 5,
+        "label": "Mai/2024",
+        "valor": 38900
+      },
+      {
+        "ano": 2024,
+        "mes": 6,
+        "label": "Jun/2024",
+        "valor": 41200
+      },
+      {
+        "ano": 2024,
+        "mes": 7,
+        "label": "Jul/2024",
+        "valor": 36800
+      },
+      {
+        "ano": 2024,
+        "mes": 8,
+        "label": "Ago/2024",
+        "valor": 39500
+      },
+      {
+        "ano": 2024,
+        "mes": 9,
+        "label": "Set/2024",
+        "valor": 33210.64
+      },
+      {
+        "ano": 2024,
+        "mes": 10,
+        "label": "Out/2024",
+        "valor": 35400
+      },
+      {
+        "ano": 2024,
+        "mes": 11,
+        "label": "Nov/2024",
+        "valor": 37800
+      },
+      {
+        "ano": 2024,
+        "mes": 12,
+        "label": "Dez/2024",
+        "valor": 33900
+      },
+      {
+        "ano": 2025,
+        "mes": 1,
+        "label": "Jan/2025",
+        "valor": 11500
+      },
+      {
+        "ano": 2025,
+        "mes": 2,
+        "label": "Fev/2025",
+        "valor": 12800
+      },
+      {
+        "ano": 2025,
+        "mes": 3,
+        "label": "Mar/2025",
+        "valor": 13200
+      },
+      {
+        "ano": 2025,
+        "mes": 4,
+        "label": "Abr/2025",
+        "valor": 12100
+      },
+      {
+        "ano": 2025,
+        "mes": 5,
+        "label": "Mai/2025",
+        "valor": 11900
+      },
+      {
+        "ano": 2025,
+        "mes": 6,
+        "label": "Jun/2025",
+        "valor": 13500
+      },
+      {
+        "ano": 2025,
+        "mes": 7,
+        "label": "Jul/2025",
+        "valor": 12088.05
+      },
+      {
+        "ano": 2025,
+        "mes": 8,
+        "label": "Ago/2025",
+        "valor": 11200
+      },
+      {
+        "ano": 2025,
+        "mes": 9,
+        "label": "Set/2025",
+        "valor": 12500
+      },
+      {
+        "ano": 2025,
+        "mes": 10,
+        "label": "Out/2025",
+        "valor": 11800
+      },
+      {
+        "ano": 2025,
+        "mes": 11,
+        "label": "Nov/2025",
+        "valor": 9500
+      },
+      {
+        "ano": 2025,
+        "mes": 12,
+        "label": "Dez/2025",
+        "valor": 10000
+      },
+      {
+        "ano": 2026,
+        "mes": 1,
+        "label": "Jan/2026",
+        "valor": 3000
+      },
+      {
+        "ano": 2026,
+        "mes": 2,
+        "label": "Fev/2026",
+        "valor": 4000
+      },
+      {
+        "ano": 2026,
+        "mes": 3,
+        "label": "Mar/2026",
+        "valor": 16777.45
+      },
+      {
+        "ano": 2026,
+        "mes": 4,
+        "label": "Abr/2026",
+        "valor": 6471.03
+      },
+      {
+        "ano": 2026,
+        "mes": 5,
+        "label": "Mai/2026",
+        "valor": 17724.97
+      },
+      {
+        "ano": 2026,
+        "mes": 6,
+        "label": "Jun/2026",
+        "valor": 17728.87
+      },
+      {
+        "ano": 2026,
+        "mes": 7,
+        "label": "Jul/2026",
+        "valor": 23441.25
+      },
+      {
+        "ano": 2026,
+        "mes": 8,
+        "label": "Ago/2026",
+        "valor": 0
+      },
+      {
+        "ano": 2026,
+        "mes": 9,
+        "label": "Set/2026",
+        "valor": 3000
+      }
+    ]
+  },
+  "clientesRecebimentosSNDecor": {
+    "descricao": "Relatório de clientes por forma de pagamento (Trinks), relatório completo (32/32 lançamentos; 3 são pedidos históricos de 2022, fora do filtro mensal).",
+    "lancamentos": [
+      {
+        "pedido": 27,
+        "cliente": "Debora Cavalcanti De Albuquerque",
+        "forma": "Crédito",
+        "mes": 3,
+        "data": "27/03/2026",
+        "valor": 59.7,
+        "pago": true
+      },
+      {
+        "pedido": 29,
+        "cliente": "Juliana Brunow",
+        "forma": "Pix",
+        "mes": 4,
+        "data": "02/04/2026",
+        "valor": 150.12,
+        "pago": true
+      },
+      {
+        "pedido": 31,
+        "cliente": "Eliete Wolf",
+        "forma": "Crédito",
+        "mes": 4,
+        "data": "30/04/2026",
+        "valor": 94.5,
+        "pago": true
+      },
+      {
+        "pedido": 32,
+        "cliente": "Joyce Marisa Lima Dos Santos",
+        "forma": "Pix",
+        "mes": 4,
+        "data": "30/04/2026",
+        "valor": 176.3,
+        "pago": true
+      },
+      {
+        "pedido": 34,
+        "cliente": "Vida Em Flor Boutique Floral E Decor Ltda",
+        "forma": "Pix",
+        "mes": 5,
+        "data": "12/05/2026",
+        "valor": 500,
+        "pago": true
+      },
+      {
+        "pedido": 34,
+        "cliente": "Vida Em Flor Boutique Floral E Decor Ltda",
+        "forma": "Pix",
+        "mes": 5,
+        "data": "27/05/2026",
+        "valor": 509.58,
+        "pago": true
+      },
+      {
+        "pedido": 36,
+        "cliente": "François Ozanne",
+        "forma": "Pix",
+        "mes": 5,
+        "data": "07/05/2026",
+        "valor": 108.58,
+        "pago": true
+      },
+      {
+        "pedido": 37,
+        "cliente": "Germana Martins De Faro",
+        "forma": "Crédito",
+        "mes": 5,
+        "data": "08/05/2026",
+        "valor": 70.56,
+        "pago": true
+      },
+      {
+        "pedido": 38,
+        "cliente": "Maelyn Goeking De Oliveira",
+        "forma": "Pix",
+        "mes": 5,
+        "data": "25/05/2026",
+        "valor": 303.6,
+        "pago": true
+      },
+      {
+        "pedido": 39,
+        "cliente": "Mileny Montenegro",
+        "forma": "Crédito",
+        "mes": 5,
+        "data": "09/05/2026",
+        "valor": 88.72,
+        "pago": true
+      },
+      {
+        "pedido": 43,
+        "cliente": "Paula Franco Barreto",
+        "forma": "Crédito",
+        "mes": 5,
+        "data": "15/05/2026",
+        "valor": 214.7,
+        "pago": true
+      },
+      {
+        "pedido": 44,
+        "cliente": "Daniela Santana",
+        "forma": "Pix",
+        "mes": 5,
+        "data": "18/05/2026",
+        "valor": 18.36,
+        "pago": true
+      },
+      {
+        "pedido": 44,
+        "cliente": "Daniela Santana",
+        "forma": "Débito",
+        "mes": 5,
+        "data": "18/05/2026",
+        "valor": 98.82,
+        "pago": true
+      },
+      {
+        "pedido": 45,
+        "cliente": "Allana Bomfim",
+        "forma": "Débito",
+        "mes": 6,
+        "data": "05/06/2026",
+        "valor": 29.75,
+        "pago": true
+      },
+      {
+        "pedido": 47,
+        "cliente": "Due Restaurante Ltda",
+        "forma": "Pix",
+        "mes": 6,
+        "data": "10/06/2026",
+        "valor": 25.2,
+        "pago": true
+      },
+      {
+        "pedido": 49,
+        "cliente": "Maria Rosa Melo Alves",
+        "forma": "Crédito",
+        "mes": 6,
+        "data": "27/06/2026",
+        "valor": 503.43,
+        "pago": true
+      },
+      {
+        "pedido": 50,
+        "cliente": "Diandra Melo",
+        "forma": "Crédito",
+        "mes": 6,
+        "data": "30/06/2026",
+        "valor": 158.4,
+        "pago": true
+      },
+      {
+        "pedido": 51,
+        "cliente": "Maria Rosa Melo Alves",
+        "forma": "Pix",
+        "mes": 7,
+        "data": "02/07/2026",
+        "valor": 76.14,
+        "pago": true
+      },
+      {
+        "pedido": 52,
+        "cliente": "Maira Maynart Franco Cabral Machado",
+        "forma": "Pix",
+        "mes": 7,
+        "data": "13/07/2026",
+        "valor": 118,
+        "pago": true
+      },
+      {
+        "pedido": 53,
+        "cliente": "Silvia Lorena Sobral Silveira",
+        "forma": "Pix",
+        "mes": 8,
+        "data": "01/08/2026",
+        "valor": 90,
+        "pago": true
+      },
+      {
+        "pedido": 55,
+        "cliente": "Juliana Nogueira",
+        "forma": "Pix",
+        "mes": 7,
+        "data": "22/07/2026",
+        "valor": 215.8,
+        "pago": true
+      },
+      {
+        "pedido": 59,
+        "cliente": "Marianna Souza Felipe",
+        "forma": "Pix",
+        "mes": 7,
+        "data": "28/07/2026",
+        "valor": 174.96,
+        "pago": true
+      },
+      {
+        "pedido": 62,
+        "cliente": "Juliana Nogueira",
+        "forma": "Crédito",
+        "mes": 8,
+        "data": "07/08/2026",
+        "valor": 358.63,
+        "pago": true
+      },
+      {
+        "pedido": 63,
+        "cliente": "Juliana Nogueira",
+        "forma": "Pix",
+        "mes": 8,
+        "data": "08/08/2026",
+        "valor": 48.09,
+        "pago": true
+      },
+      {
+        "pedido": 64,
+        "cliente": "Juliana Nogueira",
+        "forma": "Pix",
+        "mes": 8,
+        "data": "13/08/2026",
+        "valor": 176.73,
+        "pago": true
+      },
+      {
+        "pedido": 66,
+        "cliente": "Prada Brasil Importação E Comercio De Artigos De Luxo Ltda",
+        "forma": "Pix",
+        "mes": 9,
+        "data": "Pendente (venc. 20/09/2026)",
+        "valor": 900,
+        "pago": false
+      },
+      {
+        "pedido": 67,
+        "cliente": "Silvia Lorena Sobral Silveira",
+        "forma": "Pix",
+        "mes": 9,
+        "data": "08/09/2026",
+        "valor": 875.07,
+        "pago": true
+      },
+      {
+        "pedido": 71,
+        "cliente": "Fabyana Barbosa Vieira",
+        "forma": "Pix",
+        "mes": 9,
+        "data": "08/09/2026",
+        "valor": 14,
+        "pago": true
+      },
+      {
+        "pedido": 72,
+        "cliente": "Jackeline Andrade De Pinho",
+        "forma": "Pix",
+        "mes": 9,
+        "data": "08/09/2026",
+        "valor": 118.51,
+        "pago": true
+      }
+    ],
+    "nota": "O relatório completo (32 lançamentos: 9 Crédito + 19 Pix + 2 Dinheiro + 2 Débito) confirmou que não há pedidos de 2026 faltando aqui — os únicos 3 lançamentos que não apareciam em versões anteriores do relatório eram pedidos históricos de 2022, fora do escopo deste painel."
+  },
+  "contasAbertoSNDecor": {
+    "mes": "Setembro/2026",
+    "total": 16386.1,
+    "pago": 7546.19,
+    "aberto": 8839.91,
+    "itens": [
+      {
+        "nome": "Aluguel",
+        "valor": 5520
+      },
+      {
+        "nome": "Full Fit",
+        "valor": 2357.92
+      },
+      {
+        "nome": "IPTU",
+        "valor": 311.99
+      },
+      {
+        "nome": "Luiz Felipe (marketing)",
+        "valor": 500
+      },
+      {
+        "nome": "Jaelisson (limpeza de vidros)",
+        "valor": 150
+      }
+    ],
+    "semValor": [
+      "Iguá Marinha",
+      "Energisa Marinha"
+    ]
+  },
+  "saldoThb": {
+    "stone": 23913.69,
+    "caixa": 3230.86,
+    "total": 27144.55,
+    "referencia": "16 de setembro de 2026"
+  },
+  "vendasDiaTHB": {
+    "mes": "Setembro/2026",
+    "total": 53932.27,
+    "dias": [
+      {
+        "d": "01/09",
+        "sem": "ter",
+        "v": 3077.75
+      },
+      {
+        "d": "02/09",
+        "sem": "qua",
+        "v": 2342.8
+      },
+      {
+        "d": "03/09",
+        "sem": "qui",
+        "v": 2851.85
+      },
+      {
+        "d": "04/09",
+        "sem": "sex",
+        "v": 5307.35
+      },
+      {
+        "d": "05/09",
+        "sem": "sáb",
+        "v": 7296.2
+      },
+      {
+        "d": "08/09",
+        "sem": "ter",
+        "v": 2971.55
+      },
+      {
+        "d": "09/09",
+        "sem": "qua",
+        "v": 3320.9
+      },
+      {
+        "d": "10/09",
+        "sem": "qui",
+        "v": 2061.55
+      },
+      {
+        "d": "11/09",
+        "sem": "sex",
+        "v": 4964.35
+      },
+      {
+        "d": "12/09",
+        "sem": "sáb",
+        "v": 10655.87
+      },
+      {
+        "d": "14/09",
+        "sem": "seg",
+        "v": 4158.45
+      },
+      {
+        "d": "15/09",
+        "sem": "ter",
+        "v": 2029.35
+      },
+      {
+        "d": "16/09",
+        "sem": "qua",
+        "v": 2894.3
+      }
+    ]
+  },
+  "pendenciasSetembroThb": {
+    "ate0209": 0.3,
+    "itensAte0209": [
+      {
+        "nome": "LU / Lucimara — 01/09, lançada R$ 0,30 a menos",
+        "valor": 0.3
+      }
+    ],
+    "notaLorena": "Lorena Santana — R$ 807,50 removida desta lista em 16/09: pagamento foi realizado incorretamente e depois devolvido. Não é despesa operacional pendente no Trinks.",
+    "totalPeriodo": 22517.37,
+    "resolvidoEm16_09": true,
+    "total": 0.3,
+    "movimentacoes": [
+      {
+        "d": "03/09",
+        "nome": "GAT Gestão",
+        "v": 3000
+      },
+      {
+        "d": "04/09",
+        "nome": "Make Beauty Cosméticos",
+        "v": 1000.8
+      },
+      {
+        "d": "05/09",
+        "nome": "Kauan",
+        "v": 1323.73
+      },
+      {
+        "d": "05/09",
+        "nome": "Daniela",
+        "v": 1589.02
+      },
+      {
+        "d": "05/09",
+        "nome": "Josineide",
+        "v": 1793.95
+      },
+      {
+        "d": "05/09",
+        "nome": "Magna",
+        "v": 1855.5
+      },
+      {
+        "d": "05/09",
+        "nome": "Valdirene",
+        "v": 3170.63
+      },
+      {
+        "d": "06/09",
+        "nome": "Anderson",
+        "v": 4452.52
+      },
+      {
+        "d": "11/09",
+        "nome": "Rafael Carvalho",
+        "v": 210
+      },
+      {
+        "d": "11/09",
+        "nome": "Energisa",
+        "v": 4121.22
+      }
+    ],
+    "receitaSet": 51037.97,
+    "despesaTrinks": 51412.63,
+    "resultadoTrinks": -374.66,
+    "despesaProjetada": 51412.93,
+    "resultadoProjetado": -374.96,
+    "notaProjecao": "Confirmado pelo Neto em 16/09: os pagamentos de 03 a 11/09 já foram lançados no Trinks — a despesa de R$ 51.412,63 (até 15/09) já reflete isso. Só resta a diferença de R$ 0,30 da LU/Lucimara.",
+    "comissaoPendente": {
+      "valor": 24364.51,
+      "descricao": "Comissão da 1ª quinzena de setembro — informada pelo Neto em 17/09, ainda NÃO lançada no Trinks. Quando entrar, reduz a despesa operacional (e o resultado) de setembro em cerca desse valor."
+    }
+  },
+  "auditoriaTrinksStoneTHB": {
+    "percentual": 85,
+    "faltanteOriginal": 7708.23,
+    "corrigido": 6884.37,
+    "restante": 823.86,
+    "stone": 95889.41,
+    "trinks": 95472.38,
+    "diferenca": 417.03,
+    "meses": [
+      {
+        "mes": "Julho",
+        "trinks": 112182.74,
+        "stone": 112182.74,
+        "dif": 0,
+        "status": "conciliado",
+        "nota": "Fechado. Sem diferenças de valor, lançamentos faltantes ou divergências de data. O cartão também fecha contra a fatura Bradesco."
+      },
+      {
+        "mes": "Agosto",
+        "trinks": 95472.38,
+        "stone": 95889.41,
+        "dif": 417.03,
+        "status": "pendencias",
+        "nota": "Diferença de R$ 417,03 integralmente explicada, mas ainda com lançamentos a acertar."
+      },
+      {
+        "mes": "Setembro",
+        "trinks": 26101.77,
+        "stone": 49426.34,
+        "dif": 23324.57,
+        "status": "desatualizado",
+        "nota": "O consolidado do Trinks vai só até 02/09, enquanto a Stone já registra até 11/09."
+      }
+    ],
+    "decomposicao": [
+      {
+        "nome": "Pagar.me — 20/08, falta lançar",
+        "valor": 643.86
+      },
+      {
+        "nome": "Fernanda da Silva — 31/08, falta lançar",
+        "valor": 180
+      },
+      {
+        "nome": "Cartão Bradesco — sem composição",
+        "valor": 293.57
+      },
+      {
+        "nome": "APR Gestão — duplicidade no Trinks",
+        "valor": -650
+      },
+      {
+        "nome": "Josceline — duplicidade no Trinks",
+        "valor": -49.5
+      },
+      {
+        "nome": "Kauan — diferença de centavos",
+        "valor": -0.9
+      }
+    ],
+    "pendencias": [
+      {
+        "titulo": "Pagar.me — R$ 643,86 a lançar",
+        "texto": "Pagamento de 20/08 registrado na Stone e ausente no Trinks."
+      },
+      {
+        "titulo": "Fernanda da Silva — R$ 180,00 a lançar",
+        "texto": "Pagamento de 31/08 registrado na Stone e ausente no Trinks."
+      },
+      {
+        "titulo": "APR Gestão — duplicidade de R$ 650,00",
+        "texto": "Dois lançamentos de R$ 650,00 no Trinks em 07/08 contra um único pagamento na Stone."
+      },
+      {
+        "titulo": "Josceline — duplicidade de R$ 49,50",
+        "texto": "Dois lançamentos de R$ 49,50 no Trinks em 01/08 contra um único pagamento na Stone."
+      },
+      {
+        "titulo": "Kauan — diferença de R$ 0,90",
+        "texto": "R$ 1.340,90 no Trinks contra R$ 1.340,00 na Stone, em 06/08."
+      },
+      {
+        "titulo": "Cartão Bradesco — R$ 293,57 a identificar",
+        "texto": "Despesas em cartão no Trinks somam R$ 4.750,30; os pagamentos ao Bradesco na Stone somam R$ 5.043,87."
+      },
+      {
+        "titulo": "Três datas divergentes",
+        "texto": "Josineide R$ 15,40 (Trinks 03/08 × Stone 01/08); Gleidielle R$ 1.551,25 (03/08 × 01/08); Daniela R$ 1.703,60 (05/08 × 06/08)."
+      }
+    ]
+  }
 }

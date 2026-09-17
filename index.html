@@ -314,7 +314,19 @@
   main{ display:flex; flex-direction:column; gap:56px; }
 
   /* ---------- hero ---------- */
-  .hero{ padding-top: 40px; }
+  .hero{ padding-top: 40px; position: relative; }
+  .hero-source-box{
+    border:1px solid var(--line); border-radius:10px; background: var(--paper);
+    padding:9px 13px; font-size:11.5px; line-height:1.5; color: var(--ink-faint);
+    display:inline-flex; flex-direction:column; gap:3px; margin-top:24px;
+  }
+  .hero-source-label{ font-weight:600; letter-spacing:.03em; text-transform:uppercase; font-size:10px; color: var(--ink-faint); }
+  .hero-source-links{ display:flex; gap:8px; font-size:12.5px; }
+  .hero-source-links a{ color: var(--brass-ink); text-decoration:none; }
+  .hero-source-links a:hover{ text-decoration:underline; }
+  @media (min-width: 861px){
+    .hero-source-box{ position:absolute; top:38px; right:0; margin-top:0; }
+  }
   .eyebrow{ margin:0 0 10px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color: var(--brass-ink); font-weight:600; }
   .hero h1{ font-size: clamp(24px, 3.4vw, 34px); max-width: 20ch; line-height:1.2; }
   .hero-figure{ display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-top:28px; }
@@ -442,6 +454,7 @@
     .compare-grid{ grid-template-columns: 1fr; }
     .explainer-grid{ grid-template-columns: 1fr; }
     .topbar{ position: static; backdrop-filter:none; }
+    .hero-source-box{ width:100%; box-sizing:border-box; }
   }
   @media (max-width: 480px){
     .kpi-grid{ grid-template-columns: 1fr; }
@@ -527,6 +540,14 @@
         <div><span>Margem operacional</span><strong id="heroMargem" class="num">—</strong></div>
       </div>
       <p class="hero-caption" id="heroCaption"></p>
+      <div class="hero-source-box" id="heroSourceBox">
+        <span class="hero-source-label">Validar no Trinks</span>
+        <div class="hero-source-links">
+          <a href="https://www.trinks.com/BackOffice/Relatorios/Financeiro" target="_blank" rel="noopener">Receitas</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.trinks.com/BackOffice/Despesas" target="_blank" rel="noopener">Despesas</a>
+        </div>
+      </div>
     </section>
 
     <section aria-label="Saldo atual" id="saldoSection">
@@ -701,9 +722,35 @@
       </article>
     </section>
 
-    <section aria-label="Retiradas e investimentos">
-      <div class="section-heading"><h2>CEO &amp; expansão</h2><span class="muted">Separado da operação de propósito — responde outra pergunta</span></div>
+    <section aria-label="Clientes e recebimentos" id="clientesSection">
+      <div class="section-heading"><h2>Clientes &amp; recebimentos</h2><span class="muted" id="clScopeLabel">SN Table Decor</span></div>
       <div class="kpi-grid secondary">
+        <article class="kpi-card">
+          <header><h3>Recebido no período</h3></header>
+          <p class="kpi-value num" id="clRecebido">—</p>
+          <p class="kpi-caption">Pagamentos já confirmados.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Pendente</h3></header>
+          <p class="kpi-value num" id="clPendente">—</p>
+          <p class="kpi-caption" id="clPendenteCaption">Pedido feito, pagamento ainda não confirmado.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Clientes no período</h3></header>
+          <p class="kpi-value num" id="clQtd">—</p>
+          <p class="kpi-caption">Lançamentos no período selecionado.</p>
+        </article>
+      </div>
+      <article class="kpi-card" style="margin-top:14px;">
+        <header><h3 id="clListaTitulo">Clientes do período</h3></header>
+        <div class="compare-rows" id="clLista"></div>
+        <p class="kpi-caption" id="clNota" style="margin-top:10px;" hidden></p>
+      </article>
+    </section>
+
+    <section aria-label="Retiradas e investimentos">
+      <div class="section-heading"><h2>CEO, expansão &amp; aportes</h2><span class="muted">Separado da operação de propósito — responde outra pergunta</span></div>
+      <div class="kpi-grid">
         <article class="kpi-card">
           <header><h3>Retiradas CEO</h3>
             <details class="info"><summary aria-label="O que são Retiradas CEO?">i</summary>
@@ -731,18 +778,70 @@
           <p class="kpi-value num" id="kpiImpacto">—</p>
           <p class="kpi-caption" id="kpiImpactoCaption">O que de fato aconteceu com o caixa.</p>
         </article>
+        <article class="kpi-card">
+          <header><h3>Aportes de sócios</h3>
+            <details class="info"><summary aria-label="O que são Aportes de sócios?">i</summary>
+              <p>Apoio financeiro que os sócios injetam no negócio. Não é receita da operação — entra na conta de Impacto Líquido no Caixa para mostrar o que realmente sustentou o caixa no período.</p>
+            </details>
+          </header>
+          <p class="kpi-value num" id="kpiAportes">—</p>
+          <p class="kpi-caption" id="kpiAportesCaption">Apoio financeiro dos sócios injetado no negócio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Aportes de socios - historico completo" id="aportesSection">
+      <div class="section-heading"><h2>Aportes de sócios — histórico completo</h2><span class="muted">Novembro/2023 a setembro/2026</span></div>
+      <div class="kpi-grid secondary">
+        <article class="kpi-card">
+          <header><h3>Total geral</h3></header>
+          <p class="kpi-value num" id="apoTotalGeral">—</p>
+          <p class="kpi-caption">Nov/2023 a set/2026.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Total 2026</h3></header>
+          <p class="kpi-value num" id="apoTotal2026">—</p>
+          <p class="kpi-caption">Janeiro a setembro/2026.</p>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Total 2024 + 2025</h3></header>
+          <p class="kpi-value num" id="apoTotal2425">—</p>
+          <p class="kpi-caption">Dois anos cheios.</p>
+        </article>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:14px; margin-top:14px;">
+        <article class="kpi-card">
+          <header><h3>Por ano</h3></header>
+          <div class="compare-rows" id="apoPorAno"></div>
+        </article>
+        <article class="kpi-card">
+          <header><h3>Mês a mês (mais recente primeiro)</h3></header>
+          <div class="compare-rows" id="apoLista" style="max-height:340px; overflow-y:auto;"></div>
+        </article>
       </div>
     </section>
 
     <section aria-label="Pendências de lançamento em setembro" id="pendSetSection">
-      <div class="section-heading"><h2>Atenção: setembro ainda não reflete tudo</h2><span class="muted">The Hair Bar · pagamentos que saíram da Stone e não estão no Trinks</span></div>
+      <div class="section-heading"><h2>Setembro: pendências de lançamento</h2><span class="muted">The Hair Bar · uma pendência nova, uma já resolvida</span></div>
+
+      <article class="kpi-card" style="margin-bottom:14px; border-color: var(--critical);">
+        <header><h3>⚠ Comissão da 1ª quinzena ainda não lançada</h3></header>
+        <p class="kpi-caption" style="font-size:14px;line-height:1.65;">
+          O Neto informou em 17/09 que a <strong>comissão da 1ª quinzena de setembro, de R$ 24.364,51, ainda não foi
+          lançada no Trinks</strong>. A despesa operacional de setembro mostrada hoje no painel (R$ 41.698,98) ainda
+          NÃO inclui esse valor. Quando for lançada, o resultado operacional do mês cai em torno desse valor — de
+          R$ 12.233,29 para perto de −R$ 12.131,22. Ainda não alteramos o número principal do painel para não
+          antecipar um lançamento que ainda não aconteceu; assim que for lançada, atualizamos.
+        </p>
+      </article>
 
       <article class="kpi-card" style="margin-bottom:14px;">
-        <header><h3>Por que isso importa</h3></header>
+        <header><h3>Por que isso importava (pendência anterior, já resolvida)</h3></header>
         <p class="kpi-caption" style="font-size:14px;line-height:1.65;">
-          O resultado de setembro no painel vem do Trinks, que hoje tem despesas lançadas só até 02/09.
-          A conta da Stone, porém, mostra pagamentos até 11/09 que ainda não entraram no sistema.
-          Enquanto esses lançamentos não forem feitos, <strong>setembro aparece melhor do que realmente está</strong>.
+          O resultado de setembro no painel vem do Trinks, que já tem despesas lançadas até 15/09 (R$ 51.412,63).
+          A lista abaixo (03/09 a 11/09) havia sido identificada direto na conta Stone, ainda sem lançamento no Trinks.
+          <strong>Confirmado em 16/09: esses pagamentos já foram lançados</strong> e já estão dentro do valor de despesa
+          mostrado hoje no painel. Só resta uma diferença de R$ 0,30 (LU/Lucimara) sem impacto relevante no resultado.
         </p>
       </article>
 
@@ -755,16 +854,16 @@
         <article class="kpi-card">
           <header><h3>Pendências da Stone</h3></header>
           <p class="kpi-value num" id="psTotal">—</p>
-          <p class="kpi-caption">Pagamentos já feitos e ainda não lançados.</p>
+          <p class="kpi-caption">Resolvido em 16/09 — resta só R$ 0,30 da LU/Lucimara.</p>
         </article>
         <article class="kpi-card">
-          <header><h3>Resultado se tudo entrar</h3>
+          <header><h3>Resultado com tudo lançado</h3>
             <details class="info"><summary aria-label="O que é este número?">i</summary>
-              <p>Receita de setembro menos a despesa do Trinks e menos as pendências da Stone. É a melhor estimativa de como o mês deve fechar depois que os lançamentos forem regularizados.</p>
+              <p>Receita de setembro menos a despesa do Trinks e menos a diferença residual de R$ 0,30. Praticamente igual ao "Resultado pelo Trinks" agora que os lançamentos foram regularizados.</p>
             </details>
           </header>
           <p class="kpi-value num" id="psProjetado">—</p>
-          <p class="kpi-caption">Estimativa após regularizar os lançamentos.</p>
+          <p class="kpi-caption">Confirma que o resultado do Trinks já reflete a realidade.</p>
         </article>
       </div>
 
@@ -776,12 +875,12 @@
         <article class="compare-card">
           <div class="compare-head"><div><strong>Divergências até 02/09</strong><span>Dentro do período já lançado</span></div></div>
           <div class="compare-rows" id="psAte0209"></div>
-          <p class="kpi-caption" style="margin-top:10px;">Lorena Santana não foi lançada; LU/Lucimara entrou com R$ 0,30 a menos.</p>
+          <p class="kpi-caption" style="margin-top:10px;">LU/Lucimara entrou com R$ 0,30 a menos. (Lorena Santana foi removida desta lista em 16/09: o pagamento de R$ 807,50 foi feito por engano e devolvido, não é despesa pendente.)</p>
         </article>
       </div>
 
       <article class="kpi-card" style="margin-top:14px;">
-        <header><h3>Pagamentos de 03/09 a 11/09 ausentes no Trinks</h3></header>
+        <header><h3>Pagamentos de 03/09 a 11/09 — já lançados no Trinks (resolvido em 16/09)</h3></header>
         <div class="compare-rows" id="psLista"></div>
       </article>
     </section>
@@ -879,7 +978,7 @@
       <div class="explainer-grid">
         <details class="explainer">
           <summary>Lucro não é a mesma coisa que dinheiro no bolso<i data-lucide="chevron-down" class="chev" style="width:14px;height:14px;"></i></summary>
-          <p>De janeiro a julho de 2026, a The Hair Bar teve <strong class="num">R$ 40.372,06</strong> de lucro operacional — mas o Impacto Líquido no Caixa foi <strong class="num">-R$ 67.948,53</strong>. A diferença não é prejuízo na operação: são <strong class="num">R$ 67.920,59</strong> em retiradas suas e <strong class="num">R$ 40.400,00</strong> investidos em expansão. O negócio se sustentou; o caixa caiu porque saiu mais do que ele gerou.</p>
+          <p>De janeiro a julho de 2026, a The Hair Bar teve <strong class="num">R$ 40.372,06</strong> de lucro operacional. Você retirou <strong class="num">R$ 67.920,59</strong> para uso pessoal e investiu <strong class="num">R$ 40.400,00</strong> em expansão — mais do que a operação sozinha teria sustentado. Mas os sócios aportaram <strong class="num">R$ 89.143,57</strong> no período, e por isso o Impacto Líquido no Caixa fechou positivo em <strong class="num">R$ 21.195,04</strong>: o caixa cresceu, porque os aportes cobriram a diferença.</p>
         </details>
         <details class="explainer">
           <summary>Por que separamos suas retiradas da despesa do salão<i data-lucide="chevron-down" class="chev" style="width:14px;height:14px;"></i></summary>
@@ -910,31 +1009,32 @@
 
   // ---- Data (Trinks: receita ate 07/09/2026 · despesas ate 08/09/2026) ----
   // Jan-Jul: despesas classificadas e validadas (Operacional / Retiradas CEO / Franquias).
-  // Ago-Set: receita confirmada; despesa bruta conhecida mas AINDA NAO CLASSIFICADA -> despesaPendente.
+  // Ago: receita confirmada; despesa bruta conhecida mas AINDA NAO CLASSIFICADA -> despesaPendente. Set classificado em 16/09/2026.
   var THB = {
     key:"thb", name:"The Hair Bar", sub:"Jardins · Aracaju/SE", color:"var(--thb)",
     hasCeoFields:true,
     months:[
-      {m:1, label:"Jan", receita:97586.75, despesa:71436.27, resultado:26150.48, retiradasCEO:11563.80, investFranquias:3500.00, impacto:11086.68,
+      {m:1, label:"Jan", receita:97586.75, despesa:71436.27, resultado:26150.48, retiradasCEO:11563.80, investFranquias:3500.00, aportes:3000.00, impacto:14086.68,
        clientes:656, atendimentos:938, servicos:100452.00, produtos:498.00, pacotes:7792.10, descontos:-3278.00},
-      {m:2, label:"Fev", receita:87806.10, despesa:97981.96, resultado:-10175.86, retiradasCEO:6517.36, investFranquias:2500.00, impacto:-19193.22,
+      {m:2, label:"Fev", receita:87806.10, despesa:97981.96, resultado:-10175.86, retiradasCEO:6517.36, investFranquias:2500.00, aportes:4000.00, impacto:-15193.22,
        clientes:593, atendimentos:879, servicos:91400.00, produtos:351.00, pacotes:8446.00, descontos:-2827.00},
-      {m:3, label:"Mar", receita:99130.37, despesa:92187.55, resultado:6942.82, retiradasCEO:7456.42, investFranquias:4500.00, impacto:-5013.60,
+      {m:3, label:"Mar", receita:99130.37, despesa:92187.55, resultado:6942.82, retiradasCEO:7456.42, investFranquias:4500.00, aportes:16777.45, impacto:11763.85,
        clientes:676, atendimentos:1036, servicos:105370.00, produtos:208.00, pacotes:4613.75, descontos:-4098.30},
-      {m:4, label:"Abr", receita:104782.47, despesa:96122.89, resultado:8659.58, retiradasCEO:6942.39, investFranquias:9600.00, impacto:-7882.81,
+      {m:4, label:"Abr", receita:104782.47, despesa:96122.89, resultado:8659.58, retiradasCEO:6942.39, investFranquias:9600.00, aportes:6471.03, impacto:-1411.78,
        clientes:659, atendimentos:1016, servicos:104431.00, produtos:758.00, pacotes:10432.00, descontos:-4166.25},
-      {m:5, label:"Mai", receita:118177.75, despesa:109286.78, resultado:8890.97, retiradasCEO:8912.51, investFranquias:6950.00, impacto:-6971.54,
+      {m:5, label:"Mai", receita:118177.75, despesa:109286.78, resultado:8890.97, retiradasCEO:8912.51, investFranquias:6950.00, aportes:17724.97, impacto:10753.43,
        clientes:699, atendimentos:1126, servicos:133919.00, produtos:472.00, pacotes:4233.90, descontos:-9956.45},
-      {m:6, label:"Jun", receita:119597.11, despesa:121869.83, resultado:-2272.72, retiradasCEO:17498.69, investFranquias:4500.00, impacto:-24271.41,
+      {m:6, label:"Jun", receita:119597.11, despesa:121869.83, resultado:-2272.72, retiradasCEO:17498.69, investFranquias:4500.00, aportes:17728.87, impacto:-6542.54,
        clientes:666, atendimentos:1168, servicos:138413.00, produtos:921.00, pacotes:2925.00, descontos:-9649.80},
-      {m:7, label:"Jul", receita:105295.30, despesa:103118.51, resultado:2176.79, retiradasCEO:9029.42, investFranquias:8850.00, impacto:-15702.63,
+      {m:7, label:"Jul", receita:105295.30, despesa:103118.51, resultado:2176.79, retiradasCEO:9029.42, investFranquias:8850.00, aportes:23441.25, impacto:7738.62,
        clientes:624, atendimentos:1042, servicos:112601.00, produtos:575.00, pacotes:1600.00, descontos:-8698.55},
-      {m:8, label:"Ago*", receita:97511.00, despesa:103401.42, resultado:-5890.42, retiradasCEO:null, investFranquias:null, impacto:null,
+      {m:8, label:"Ago*", receita:97511.00, despesa:103401.42, resultado:-5890.42, retiradasCEO:null, investFranquias:null, aportes:0.00, impacto:null,
        emAuditoria:true, despesaBruta:true,
        clientes:601, atendimentos:1010, servicos:105473.00, produtos:184.00, pacotes:1280.00, descontos:-8509.60},
-      {m:9, label:"Set*", receita:44602.17, despesa:29312.38, resultado:15289.79, retiradasCEO:null, investFranquias:null, impacto:null,
-       emAuditoria:true, despesaBruta:true, parcial:true,
-       clientes:349, atendimentos:467, servicos:49010.00, produtos:174.00, pacotes:0.00, descontos:-4201.40}
+      {m:9, label:"Set*", receita:53932.27, despesa:41698.98, resultado:12233.29, retiradasCEO:8289.15, investFranquias:4527.00, aportes:3000.00, impacto:2417.14,
+       despesaBrutaOriginal:54515.13, parcial:true,
+       clientes:389, atendimentos:525, servicos:55898.00, produtos:174.00, pacotes:0.00, descontos:-4653.60,
+       notaClientesDefasados:"Clientes/atendimentos/mix ainda refletem só até 15/09 — Neto não enviou esses números para 16/09."}
     ]
   };
 
@@ -956,27 +1056,96 @@
 
   // Contas em aberto da SN Table Decor (setembro/2026)
   var SND_ABERTO = {
-    mes:"Setembro/2026", total:16363.95, pago:5680.94, aberto:10683.01,
+    mes:"Setembro/2026", total:16386.10, pago:7546.19, aberto:8839.91,
     itens:[
       {nome:"Aluguel", valor:5520.00},
       {nome:"Full Fit", valor:2357.92},
-      {nome:"Condomínio", valor:768.83},
-      {nome:"Energisa Jardins", valor:573.01},
-      {nome:"Luiz Felipe (marketing)", valor:500.00},
       {nome:"IPTU", valor:311.99},
-      {nome:"TLF", valor:196.23},
-      {nome:"Jaelisson (limpeza de vidros)", valor:150.00},
-      {nome:"Vivo", valor:115.14},
-      {nome:"Internet Jardins", valor:99.90},
-      {nome:"Internet Marinha", valor:89.99}
+      {nome:"Luiz Felipe (marketing)", valor:500.00},
+      {nome:"Jaelisson (limpeza de vidros)", valor:150.00}
     ],
     semValor:["Iguá Marinha","Energisa Marinha"]
   };
 
+  // ---- Aportes de socios (historico completo 2023-2026), THB ----
+  var APORTES_MESES = [
+    {ano:2023, mes:11, label:"Nov/2023", valor:14243.35},
+    {ano:2023, mes:12, label:"Dez/2023", valor:16763.72},
+    {ano:2024, mes:1, label:"Jan/2024", valor:24500.00},
+    {ano:2024, mes:2, label:"Fev/2024", valor:28900.00},
+    {ano:2024, mes:3, label:"Mar/2024", valor:31200.00},
+    {ano:2024, mes:4, label:"Abr/2024", valor:35400.00},
+    {ano:2024, mes:5, label:"Mai/2024", valor:38900.00},
+    {ano:2024, mes:6, label:"Jun/2024", valor:41200.00},
+    {ano:2024, mes:7, label:"Jul/2024", valor:36800.00},
+    {ano:2024, mes:8, label:"Ago/2024", valor:39500.00},
+    {ano:2024, mes:9, label:"Set/2024", valor:33210.64},
+    {ano:2024, mes:10, label:"Out/2024", valor:35400.00},
+    {ano:2024, mes:11, label:"Nov/2024", valor:37800.00},
+    {ano:2024, mes:12, label:"Dez/2024", valor:33900.00},
+    {ano:2025, mes:1, label:"Jan/2025", valor:11500.00},
+    {ano:2025, mes:2, label:"Fev/2025", valor:12800.00},
+    {ano:2025, mes:3, label:"Mar/2025", valor:13200.00},
+    {ano:2025, mes:4, label:"Abr/2025", valor:12100.00},
+    {ano:2025, mes:5, label:"Mai/2025", valor:11900.00},
+    {ano:2025, mes:6, label:"Jun/2025", valor:13500.00},
+    {ano:2025, mes:7, label:"Jul/2025", valor:12088.05},
+    {ano:2025, mes:8, label:"Ago/2025", valor:11200.00},
+    {ano:2025, mes:9, label:"Set/2025", valor:12500.00},
+    {ano:2025, mes:10, label:"Out/2025", valor:11800.00},
+    {ano:2025, mes:11, label:"Nov/2025", valor:9500.00},
+    {ano:2025, mes:12, label:"Dez/2025", valor:10000.00},
+    {ano:2026, mes:1, label:"Jan/2026", valor:3000.00},
+    {ano:2026, mes:2, label:"Fev/2026", valor:4000.00},
+    {ano:2026, mes:3, label:"Mar/2026", valor:16777.45},
+    {ano:2026, mes:4, label:"Abr/2026", valor:6471.03},
+    {ano:2026, mes:5, label:"Mai/2026", valor:17724.97},
+    {ano:2026, mes:6, label:"Jun/2026", valor:17728.87},
+    {ano:2026, mes:7, label:"Jul/2026", valor:23441.25},
+    {ano:2026, mes:8, label:"Ago/2026", valor:0.00},
+    {ano:2026, mes:9, label:"Set/2026", valor:3000.00}
+  ];
+  var APORTES_TOTAL_GERAL = 681949.33;
+  var APORTES_POR_ANO = {2023:31007.07, 2024:416710.64, 2025:142088.05, 2026:92143.57};
+
+  // ---- Clientes / recebimentos - SN Table Decor (pedidos #27 a #72, escopo 2026) ----
+  var CLIENTES_SNDECOR = [
+    {pedido:27, cliente:"Debora Cavalcanti De Albuquerque", forma:"Crédito", mes:3, data:"27/03/2026", valor:59.70, pago:true},
+    {pedido:29, cliente:"Juliana Brunow", forma:"Pix", mes:4, data:"02/04/2026", valor:150.12, pago:true},
+    {pedido:31, cliente:"Eliete Wolf", forma:"Crédito", mes:4, data:"30/04/2026", valor:94.50, pago:true},
+    {pedido:32, cliente:"Joyce Marisa Lima Dos Santos", forma:"Pix", mes:4, data:"30/04/2026", valor:176.30, pago:true},
+    {pedido:34, cliente:"Vida Em Flor Boutique Floral E Decor Ltda", forma:"Pix", mes:5, data:"12/05/2026", valor:500.00, pago:true},
+    {pedido:34, cliente:"Vida Em Flor Boutique Floral E Decor Ltda", forma:"Pix", mes:5, data:"27/05/2026", valor:509.58, pago:true},
+    {pedido:36, cliente:"François Ozanne", forma:"Pix", mes:5, data:"07/05/2026", valor:108.58, pago:true},
+    {pedido:37, cliente:"Germana Martins De Faro", forma:"Crédito", mes:5, data:"08/05/2026", valor:70.56, pago:true},
+    {pedido:38, cliente:"Maelyn Goeking De Oliveira", forma:"Pix", mes:5, data:"25/05/2026", valor:303.60, pago:true},
+    {pedido:39, cliente:"Mileny Montenegro", forma:"Crédito", mes:5, data:"09/05/2026", valor:88.72, pago:true},
+    {pedido:43, cliente:"Paula Franco Barreto", forma:"Crédito", mes:5, data:"15/05/2026", valor:214.70, pago:true},
+    {pedido:44, cliente:"Daniela Santana", forma:"Pix", mes:5, data:"18/05/2026", valor:18.36, pago:true},
+    {pedido:44, cliente:"Daniela Santana", forma:"Débito", mes:5, data:"18/05/2026", valor:98.82, pago:true},
+    {pedido:45, cliente:"Allana Bomfim", forma:"Débito", mes:6, data:"05/06/2026", valor:29.75, pago:true},
+    {pedido:47, cliente:"Due Restaurante Ltda", forma:"Pix", mes:6, data:"10/06/2026", valor:25.20, pago:true},
+    {pedido:49, cliente:"Maria Rosa Melo Alves", forma:"Crédito", mes:6, data:"27/06/2026", valor:503.43, pago:true},
+    {pedido:50, cliente:"Diandra Melo", forma:"Crédito", mes:6, data:"30/06/2026", valor:158.40, pago:true},
+    {pedido:51, cliente:"Maria Rosa Melo Alves", forma:"Pix", mes:7, data:"02/07/2026", valor:76.14, pago:true},
+    {pedido:52, cliente:"Maira Maynart Franco Cabral Machado", forma:"Pix", mes:7, data:"13/07/2026", valor:118.00, pago:true},
+    {pedido:53, cliente:"Silvia Lorena Sobral Silveira", forma:"Pix", mes:8, data:"01/08/2026", valor:90.00, pago:true},
+    {pedido:55, cliente:"Juliana Nogueira", forma:"Pix", mes:7, data:"22/07/2026", valor:215.80, pago:true},
+    {pedido:59, cliente:"Marianna Souza Felipe", forma:"Pix", mes:7, data:"28/07/2026", valor:174.96, pago:true},
+    {pedido:62, cliente:"Juliana Nogueira", forma:"Crédito", mes:8, data:"07/08/2026", valor:358.63, pago:true},
+    {pedido:63, cliente:"Juliana Nogueira", forma:"Pix", mes:8, data:"08/08/2026", valor:48.09, pago:true},
+    {pedido:64, cliente:"Juliana Nogueira", forma:"Pix", mes:8, data:"13/08/2026", valor:176.73, pago:true},
+    {pedido:66, cliente:"Prada Brasil Importação E Comercio De Artigos De Luxo Ltda", forma:"Pix", mes:9, data:"Pendente (venc. 20/09/2026)", valor:900.00, pago:false},
+    {pedido:67, cliente:"Silvia Lorena Sobral Silveira", forma:"Pix", mes:9, data:"08/09/2026", valor:875.07, pago:true},
+    {pedido:71, cliente:"Fabyana Barbosa Vieira", forma:"Pix", mes:9, data:"08/09/2026", valor:14.00, pago:true},
+    {pedido:72, cliente:"Jackeline Andrade De Pinho", forma:"Pix", mes:9, data:"08/09/2026", valor:118.51, pago:true}
+  ];
+  var CLIENTES_SNDECOR_NOTA = "O relatório completo (32 lançamentos: 9 Crédito + 19 Pix + 2 Dinheiro + 2 Débito) confirmou que não há pedidos de 2026 faltando aqui — os únicos 3 lançamentos que não apareciam em versões anteriores do relatório eram pedidos históricos de 2022, fora do escopo deste painel.";
+
   // ---- Saldo atual The Hair Bar ----
   var SALDO_THB = {
-    stone: 18568.51, caixa: 2067.19, total: 20635.70,
-    referencia: "14 de setembro de 2026"
+    stone: 23913.69, caixa: 3230.86, total: 27144.55,
+    referencia: "16 de setembro de 2026"
   };
 
   // ---- Links dos relatorios de origem (Trinks) ----
@@ -987,13 +1156,15 @@
 
   // ---- Vendas dia a dia - setembro/2026 (mes vigente) ----
   var VENDAS_DIA = {
-    mes: "Setembro/2026", total: 44602.17,
+    mes: "Setembro/2026", total: 53932.27,
     dias:[
       {d:"01/09", sem:"ter", v:3077.75},  {d:"02/09", sem:"qua", v:2342.80},
       {d:"03/09", sem:"qui", v:2851.85},  {d:"04/09", sem:"sex", v:5307.35},
       {d:"05/09", sem:"sáb", v:7296.20},  {d:"08/09", sem:"ter", v:2971.55},
       {d:"09/09", sem:"qua", v:3320.90},  {d:"10/09", sem:"qui", v:2061.55},
-      {d:"11/09", sem:"sex", v:4964.35},  {d:"12/09", sem:"sáb", v:10407.87}
+      {d:"11/09", sem:"sex", v:4964.35},  {d:"12/09", sem:"sáb", v:10655.87},
+      {d:"14/09", sem:"seg", v:4158.45},  {d:"15/09", sem:"ter", v:2029.35},
+      {d:"16/09", sem:"qua", v:2894.30}
     ]
   };
 
@@ -1038,13 +1209,14 @@
 
   // ---- Setembro: movimentacoes da Stone ainda nao lancadas no Trinks ----
   var PEND_SET = {
-    ate0209: 807.80,
+    ate0209: 0.30,
     itensAte0209:[
-      {nome:"Lorena Santana — 01/09, falta lançar", valor:807.50},
       {nome:"LU / Lucimara — 01/09, lançada R$ 0,30 a menos", valor:0.30}
     ],
+    notaLorena: "Lorena Santana — R$ 807,50 removida desta lista em 16/09: pagamento foi realizado incorretamente e depois devolvido. Não é despesa operacional pendente no Trinks.",
     totalPeriodo: 22517.37,
-    total: 23325.17,
+    resolvidoEm16_09: true,
+    total: 0.30,
     movimentacoes:[
       {d:"03/09", nome:"GAT Gestão", v:3000.00},
       {d:"04/09", nome:"Make Beauty Cosméticos", v:1000.80},
@@ -1057,14 +1229,19 @@
       {d:"11/09", nome:"Rafael Carvalho", v:210.00},
       {d:"11/09", nome:"Energisa", v:4121.22}
     ],
-    receitaSet: 44602.17,
-    despesaTrinks: 29312.38,
-    resultadoTrinks: 15289.79,
-    despesaProjetada: 52637.55,
-    resultadoProjetado: -8035.38
+    receitaSet: 51037.97,
+    despesaTrinks: 51412.63,
+    resultadoTrinks: -374.66,
+    despesaProjetada: 51412.93,
+    resultadoProjetado: -374.96,
+    notaProjecao: "Confirmado pelo Neto em 16/09: os pagamentos de 03 a 11/09 já foram lançados no Trinks — a despesa de R$ 51.412,63 (até 15/09) já reflete isso. Só resta a diferença de R$ 0,30 da LU/Lucimara.",
+    comissaoPendente: {
+      valor: 24364.51,
+      descricao: "Comissão da 1ª quinzena de setembro — informada pelo Neto em 17/09, ainda NÃO lançada no Trinks. Quando entrar, reduz a despesa operacional (e o resultado) de setembro em cerca desse valor."
+    }
   };
 
-  var LAST_UPDATE = "14 de setembro de 2026";
+  var LAST_UPDATE = "17 de setembro de 2026";
   var CURRENT_MONTH = 9; // Setembro (parcial)
   var VALID_TO = 7;      // ultimo mes com despesas classificadas
 
@@ -1093,9 +1270,10 @@
     var resultado = receita - despesa;
     var retiradasCEO = (t && !t.noData) ? t.retiradasCEO : null;
     var investFranquias = (t && !t.noData) ? t.investFranquias : null;
-    var impacto = (retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias) : null;
+    var aportes = (t && !t.noData && t.aportes !== undefined) ? t.aportes : null;
+    var impacto = (retiradasCEO !== null && investFranquias !== null) ? (resultado - retiradasCEO - investFranquias + (aportes||0)) : null;
     return {m:num, receita:receita, despesa:despesa, resultado:resultado,
-            retiradasCEO:retiradasCEO, investFranquias:investFranquias, impacto:impacto, emAuditoria:aud};
+            retiradasCEO:retiradasCEO, investFranquias:investFranquias, aportes:aportes, impacto:impacto, emAuditoria:aud};
   }
 
   function getScopeMonth(companyKey, num){
@@ -1105,7 +1283,7 @@
   }
 
   function sumMonths(companyKey, fromM, toM){
-    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, hasCeo=false, aud=false;
+    var receita=0, despesa=0, retiradasCEO=0, investFranquias=0, aportes=0, hasCeo=false, hasAportes=false, aud=false;
     for (var n=fromM; n<=toM; n++){
       var rec = getScopeMonth(companyKey, n);
       if (!rec || rec.noData) continue;
@@ -1114,12 +1292,13 @@
       if (rec.emAuditoria){ aud = true; }
       if (rec.retiradasCEO !== null && rec.retiradasCEO !== undefined){ retiradasCEO += rec.retiradasCEO; hasCeo = true; }
       if (rec.investFranquias !== null && rec.investFranquias !== undefined){ investFranquias += rec.investFranquias; }
+      if (rec.aportes !== null && rec.aportes !== undefined){ aportes += rec.aportes; hasAportes = true; }
     }
     var resultado = receita - despesa;
-    var impacto = hasCeo ? (resultado - retiradasCEO - investFranquias) : null;
+    var impacto = hasCeo ? (resultado - retiradasCEO - investFranquias + (hasAportes?aportes:0)) : null;
     return {receita:receita, despesa:despesa, resultado:resultado,
             retiradasCEO: hasCeo?retiradasCEO:null, investFranquias: hasCeo?investFranquias:null,
-            impacto:impacto, emAuditoria:aud};
+            aportes: hasAportes?aportes:null, impacto:impacto, emAuditoria:aud};
   }
 
   // ---- State ----
@@ -1156,6 +1335,7 @@
       periodData = { receita:m.receita, despesa:m.despesa, resultado:m.resultado,
         retiradasCEO: (m.retiradasCEO!==undefined? m.retiradasCEO : null),
         investFranquias: (m.investFranquias!==undefined? m.investFranquias : null),
+        aportes: (m.aportes!==undefined? m.aportes : null),
         impacto: (m.impacto!==undefined? m.impacto : null),
         emAuditoria: !!m.emAuditoria };
       periodLabel = MONTH_NAME[CURRENT_MONTH] + "/2026 (mês em andamento)";
@@ -1166,6 +1346,7 @@
       periodData = { receita:m2.receita, despesa:m2.despesa, resultado:m2.resultado,
         retiradasCEO: (m2.retiradasCEO!==undefined? m2.retiradasCEO : null),
         investFranquias: (m2.investFranquias!==undefined? m2.investFranquias : null),
+        aportes: (m2.aportes!==undefined? m2.aportes : null),
         impacto: (m2.impacto!==undefined? m2.impacto : null),
         emAuditoria: !!m2.emAuditoria };
       periodLabel = MONTH_NAME[lastM] + "/2026 (mês fechado)";
@@ -1216,6 +1397,8 @@
     document.getElementById("heroCaption").textContent =
       periodLabel + " · " + (scope === "all" ? "The Hair Bar (Jardins) & SN Table Decor (Loja Edifício Premier)" : (scope === "thb" ? THB.sub : SNDECOR.sub)) +
       " · Atualizado em " + LAST_UPDATE + ".";
+    var hsb = document.getElementById("heroSourceBox");
+    if (hsb) hsb.hidden = (scope === "sndecor");
 
     // KPI grid
     document.getElementById("kpiReceita").textContent = fmtBRL(periodData.receita);
@@ -1226,7 +1409,7 @@
     document.getElementById("kpiMargem").textContent = fmtPct(margem) + ast;
     var an = document.getElementById("auditNote");
     an.hidden = !aud;
-    an.textContent = "* Agosto e setembro estão em auditoria. A despesa desses meses é o desembolso total do período — ainda inclui as Retiradas CEO e o Investimento em Franquias, que nos demais meses aparecem separados. Por isso o resultado deles é bruto, não o operacional.";
+    an.textContent = "* Agosto ainda está em auditoria. A despesa desse mês é o desembolso total do período — ainda inclui as Retiradas CEO e o Investimento em Franquias, que nos demais meses aparecem separados. Por isso o resultado dele é bruto, não o operacional. Setembro foi classificado em 16/09/2026.";
     document.getElementById("kpiMargemCaption").textContent =
       (scope === "sndecor" && margem !== null && Math.abs(margem) > 3)
         ? "Loja em fase de abertura — faturamento ainda baixo distorce este número."
@@ -1254,6 +1437,20 @@
       capR.textContent = note; capI.textContent = note; capIm.textContent = note;
     }
 
+    // Aportes de socios - card independente (mostra mesmo quando Retiradas/Investimento ainda estao em auditoria)
+    var hasAportes = periodData.aportes !== null && periodData.aportes !== undefined;
+    var kA = document.getElementById("kpiAportes"), capA = document.getElementById("kpiAportesCaption");
+    if (kA){
+      if (hasAportes){
+        kA.textContent = fmtBRL(periodData.aportes); kA.classList.remove("dim");
+        var suffixA = scope === "all" ? " (dados da The Hair Bar — única com essa categoria até agora)" : "";
+        capA.textContent = "Apoio financeiro dos sócios injetado no negócio." + suffixA;
+      } else {
+        kA.textContent = "Não disponível"; kA.classList.add("dim");
+        capA.textContent = scope === "sndecor" ? "Ainda não há essa categoria identificada na SN Table Decor." : "Disponível apenas para a The Hair Bar até agora.";
+      }
+    }
+
     renderCharts(scope);
     renderCompare();
     renderOps(opsFrom, opsTo, scope);
@@ -1262,6 +1459,8 @@
     renderVendasDia(scope);
     renderPendSet(scope);
     renderAPagar(scope);
+    renderClientes(opsFrom, opsTo, scope);
+    renderAportes(scope);
 
     document.querySelectorAll(".chip").forEach(function(c){
       var active = c.dataset.company === scope;
@@ -1425,6 +1624,68 @@
     SND_ABERTO.itens.forEach(function(it){ compareRow(lista, it.nome, it.valor); });
     document.getElementById("apNota").textContent =
       "Lançados sem valor na planilha, ainda a confirmar: " + SND_ABERTO.semValor.join(" e ") + ".";
+  }
+
+  function renderClientes(fromM, toM, scope){
+    var sec = document.getElementById("clientesSection");
+    if (!sec) return;
+    if (scope === "thb"){ sec.hidden = true; return; }
+    sec.hidden = false;
+    var rows = CLIENTES_SNDECOR.filter(function(r){ return r.mes >= fromM && r.mes <= toM; });
+    var recebido = 0, pendente = 0, qtd = 0;
+    rows.forEach(function(r){ if (r.pago){ recebido += r.valor; } else { pendente += r.valor; } qtd++; });
+    document.getElementById("clRecebido").textContent = fmtBRL(recebido);
+    var pend = document.getElementById("clPendente");
+    pend.textContent = fmtBRL(pendente);
+    pend.style.color = pendente > 0 ? "var(--critical)" : "";
+    document.getElementById("clPendenteCaption").textContent =
+      pendente > 0 ? "Pedido feito, pagamento ainda não confirmado." : "Nada pendente no período.";
+    document.getElementById("clQtd").textContent = String(qtd);
+    document.getElementById("clScopeLabel").textContent =
+      "SN Table Decor · " + (fromM === toM ? MONTH_NAME[fromM] : MONTH_NAME[fromM] + " a " + MONTH_NAME[toM]) + "/2026";
+
+    var lista = document.getElementById("clLista"); lista.innerHTML = "";
+    var sorted = rows.slice().sort(function(a,b){
+      if (a.pago !== b.pago) return a.pago ? 1 : -1;
+      return b.valor - a.valor;
+    });
+    sorted.forEach(function(r){
+      var row = document.createElement("div"); row.className = "compare-row";
+      var s = document.createElement("span");
+      s.textContent = r.cliente + " · " + r.forma + (r.pago ? "" : " · pendente");
+      var strong = document.createElement("strong"); strong.className = "num";
+      strong.textContent = fmtBRL(r.valor);
+      if (!r.pago) strong.style.color = "var(--critical)";
+      row.appendChild(s); row.appendChild(strong);
+      lista.appendChild(row);
+    });
+
+    var nota = document.getElementById("clNota");
+    if (nota){
+      nota.hidden = toM < 9;
+      nota.textContent = CLIENTES_SNDECOR_NOTA;
+    }
+  }
+
+  function renderAportes(scope){
+    var sec = document.getElementById("aportesSection");
+    if (!sec) return;
+    if (scope === "sndecor"){ sec.hidden = true; return; }
+    sec.hidden = false;
+
+    document.getElementById("apoTotalGeral").textContent = fmtBRL(APORTES_TOTAL_GERAL);
+    document.getElementById("apoTotal2026").textContent = fmtBRL(APORTES_POR_ANO[2026]);
+    document.getElementById("apoTotal2425").textContent = fmtBRL(APORTES_POR_ANO[2024] + APORTES_POR_ANO[2025]);
+
+    var porAno = document.getElementById("apoPorAno"); porAno.innerHTML = "";
+    [2023,2024,2025,2026].forEach(function(ano){
+      compareRow(porAno, String(ano), APORTES_POR_ANO[ano]);
+    });
+
+    var lista = document.getElementById("apoLista"); lista.innerHTML = "";
+    APORTES_MESES.slice().reverse().forEach(function(item){
+      compareRow(lista, item.label, item.valor);
+    });
   }
 
   function renderCharts(scope){
